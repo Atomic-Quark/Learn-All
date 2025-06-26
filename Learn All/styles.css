@@ -1,0 +1,8 @@
+.card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card:hover {
+    cursor: pointer;
+}

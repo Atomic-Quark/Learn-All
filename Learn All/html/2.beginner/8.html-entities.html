@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔡 HTML Entities – Explained Simply</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Arial', sans-serif;
+            color: #2d3748;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2c5282;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #3182ce;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ebf4ff;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        strong {
+            color: #2d3748;
+        }
+
+        pre {
+            background-color: #e2e8f0;
+            color: #2d3748;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.95rem;
+            white-space: pre-wrap;
+        }
+
+        code {
+            background-color: #e2e8f0;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.9em;
+            color: #c53030;
+        }
+
+        .example-box {
+            background-color: #f7fafc;
+            border-left: 5px solid #a0aec0;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .example-box h3 {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            font-size: 1.4rem;
+            color: #2c5282;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        th {
+            background-color: #edf2f7;
+            font-weight: 600;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-image: linear-gradient(to right, #4299e1, #63b3ed);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(66, 153, 225, 0.3);
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(66, 153, 225, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔡 HTML Entities – Explained Simply</h1>
+        <p class="text-center text-xl text-gray-600 mb-6">Learn how to use special characters in HTML!</p>
+
+        <h2>💡 What Are HTML Entities?</h2>
+        <div class="text-left mb-6">
+            <p>HTML Entities are special codes used to display:</p>
+            <ul>
+                <li>Symbols</li>
+                <li>Reserved characters</li>
+                <li>Invisible spaces</li>
+                <li>Non-ASCII characters (like emojis, ©, ₹)</li>
+            </ul>
+            <p>They start with <code>&</code> and end with <code>;</code>.</p>
+            <p>Example: <code>&copy;</code> → ©</p>
+        </div>
+
+        <h2>❓ Why Do We Need Entities?</h2>
+        <div class="text-left mb-6">
+            <p>Because some characters are used in HTML code itself, so we can’t write them directly.</p>
+            <p>For example:</p>
+            <pre><code>
+<p>5 < 10</p> ❌ Wrong → It will confuse the browser.
+<p>5 &lt; 10</p> ✅ Right → It will show "5 < 10"
+            </code></pre>
+        </div>
+
+        <h2>✅ Commonly Used HTML Entities</h2>
+        <table>
+            <tr>
+                <th>Character</th>
+                <th>Entity Code</th>
+                <th>Displayed As</th>
+            </tr>
+            <tr>
+                <td>
+                    << /td>
+                <td><code>&lt;</code></td>
+                <td>
+                    << /td>
+            </tr>
+            <tr>
+                <td>></td>
+                <td><code>&gt;</code></td>
+                <td>></td>
+            </tr>
+            <tr>
+                <td>&</td>
+                <td><code>&amp;</code></td>
+                <td>&</td>
+            </tr>
+            <tr>
+                <td>"</td>
+                <td><code>&quot;</code></td>
+                <td>"</td>
+            </tr>
+            <tr>
+                <td>'</td>
+                <td><code>&apos;</code></td>
+                <td>'</td>
+            </tr>
+            <tr>
+                <td>©</td>
+                <td><code>&copy;</code></td>
+                <td>©</td>
+            </tr>
+            <tr>
+                <td>®</td>
+                <td><code>&reg;</code></td>
+                <td>®</td>
+            </tr>
+            <tr>
+                <td>₹</td>
+                <td><code>&rupee;</code> or <code>&INR;</code></td>
+                <td>₹</td>
+            </tr>
+            <tr>
+                <td>€</td>
+                <td><code>&euro;</code></td>
+                <td>€</td>
+            </tr>
+            <tr>
+                <td>→</td>
+                <td><code>&rarr;</code></td>
+                <td>→</td>
+            </tr>
+            <tr>
+                <td>←</td>
+                <td><code>&larr;</code></td>
+                <td>←</td>
+            </tr>
+            <tr>
+                <td>≠</td>
+                <td><code>&ne;</code></td>
+                <td>≠</td>
+            </tr>
+            <tr>
+                <td>✓</td>
+                <td><code>&check;</code></td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td>Space (non-breaking)</td>
+                <td><code>&nbsp;</code></td>
+                <td> </td>
+            </tr>
+        </table>
+
+        <h2>🧪 Example:</h2>
+        <div class="example-box">
+            <pre><code>
+<p>Use &lt;html&gt; to start your document.</p>
+<p>Tom &amp; Jerry</p>
+<p>Price: &rupee;500 &nbsp;&nbsp;&nbsp; Offer: &rupee;450</p>
+<p>&copy; 2025 All Rights Reserved.</p>
+            </code></pre>
+            <h3>🖼️ Output:</h3>
+            <p>Use <html> to start your document.</p>
+            <p>Tom & Jerry</p>
+            <p>Price: ₹500 Offer: ₹450</p>
+            <p>© 2025 All Rights Reserved.</p>
+        </div>
+
+        <h2>💎 Special Entity Types</h2>
+        <div class="text-left mb-6">
+            <h3>🔸 1. Reserved Symbols</h3>
+            <p>Used in HTML code: <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>&quot;</code> etc.</p>
+            <h3>🔸 2. Mathematical & Technical</h3>
+            <p>+ (<code>&plus;</code>) | × (<code>&times;</code>) | ÷ (<code>&divide;</code>) | ≤ (<code>&le;</code>) |
+                ≥ (<code>&ge;</code>)</p>
+            <h3>🔸 3. Currency Symbols</h3>
+            <p>$ (<code>&dollar;</code>), £ (<code>&pound;</code>), € (<code>&euro;</code>), ₹ or <code>&INR;</code> (₹)
+            </p>
+            <h3>🔸 4. Arrows & Shapes</h3>
+            <p>→ (<code>&rarr;</code>), ← (<code>&larr;</code>), ↑ (<code>&uarr;</code>), ↓ (<code>&darr;</code>), ♥
+                (<code>&hearts;</code>), ♠ (<code>&spades;</code>)</p>
+        </div>
+
+        <h2>🧠 Bonus: Use Decimal or Hex Codes</h2>
+        <div class="text-left mb-6">
+            <p>You can also use:</p>
+            <ul>
+                <li>Decimal: <code>&copy;</code> → ©</li>
+                <li>Hex: <code>&xA9;</code> → ©</li>
+            </ul>
+            <pre><code>
+<p>This is &copy; or &#xA9; or &copy;</p>
+            </code></pre>
+            <p>This is © or © or ©</p>
+        </div>
+
+        <h2>🧠 Summary</h2>
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Example Code</th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <td>Reserved</td>
+                <td><code>&lt;</code>, <code>&gt;</code></td>
+                <td>
+                    <,>
+                </td>
+            </tr>
+            <tr>
+                <td>Symbols</td>
+                <td><code>&copy;</code>, <code>&reg;</code></td>
+                <td>©, ®</td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+                <td><code>&rupee;</code>, <code>&euro;</code></td>
+                <td>₹, €</td>
+            </tr>
+            <tr>
+                <td>Math</td>
+                <td><code>&le;</code>, <code>&ne;</code></td>
+                <td>≤, ≠</td>
+            </tr>
+            <tr>
+                <td>Spacing</td>
+                <td><code>&nbsp;</code></td>
+                <td> </td>
+            </tr>
+        </table>
+
+        <div class="text-center mt-8">
+            <a href="beginner-level.html" class="back-button">Back to Beginner Level</a>
+        </div>
+    </div>
+</body>
+
+</html>

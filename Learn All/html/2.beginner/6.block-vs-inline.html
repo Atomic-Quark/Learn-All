@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block vs Inline Elements in HTML – Explained Simply</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Arial', sans-serif;
+            color: #2d3748;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2c5282;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #3182ce;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ebf4ff;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        strong {
+            color: #2d3748;
+        }
+
+        pre {
+            background-color: #e2e8f0;
+            color: #2d3748;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.95rem;
+            white-space: pre-wrap;
+        }
+
+        code {
+            background-color: #e2e8f0;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.9em;
+            color: #c53030;
+        }
+
+        .example-box {
+            background-color: #f7fafc;
+            border-left: 5px solid #a0aec0;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .example-box h3 {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            font-size: 1.4rem;
+            color: #2c5282;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        th {
+            background-color: #edf2f7;
+            font-weight: 600;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-image: linear-gradient(to right, #4299e1, #63b3ed);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(66, 153, 225, 0.3);
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(66, 153, 225, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🧱 Block vs 🔤 Inline Elements in HTML</h1>
+        <p class="text-center text-xl text-gray-600 mb-6">Understand how block and inline elements work!</p>
+
+        <h2>🧱 Block Elements</h2>
+        <div class="text-left mb-6">
+            <h3>✅ What are Block Elements?</h3>
+            <ul>
+                <li>They take up the full width of the page or container.</li>
+                <li>Always start on a new line.</li>
+                <li>They can contain other block or inline elements.</li>
+                <li>Think of them like big boxes that stack on top of each other.</li>
+            </ul>
+        </div>
+        <div class="text-left mb-6">
+            <h3>🔸 Examples of Block Elements:</h3>
+            <p><code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>,
+                <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;table&gt;</code>,
+                <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code></p>
+        </div>
+        <div class="text-left mb-6">
+            <h3>🧠 Visual:</h3>
+            <p>[BLOCK 1]</p>
+            <p>[BLOCK 2]</p>
+            <p>[BLOCK 3]</p>
+            <p>Each one starts on its own line and stretches all the way across.</p>
+        </div>
+        <div class="example-box">
+            <h3>💡 Example:</h3>
+            <pre><code>
+<p>This is a paragraph (block).</p>
+<div>This is a div (block).</div>
+<h1>This is a heading (block).</h1>
+            </code></pre>
+            <h3>🖼️ These appear one below the other in the browser.</h3>
+            <p style="background-color: lightblue;">This is a paragraph (block).</p>
+            <div style="background-color: lightgreen;">This is a div (block).</div>
+            <h1 style="background-color: lightyellow;">This is a heading (block).</h1>
+        </div>
+
+        <h2>🔤 Inline Elements</h2>
+        <div class="text-left mb-6">
+            <h3>✅ What are Inline Elements?</h3>
+            <ul>
+                <li>They only take up as much space as needed.</li>
+                <li>They do not start on a new line – they sit next to each other.</li>
+                <li>You can place them inside block elements.</li>
+                <li>Think of them like words in a sentence.</li>
+            </ul>
+        </div>
+        <div class="text-left mb-6">
+            <h3>🔸 Examples of Inline Elements:</h3>
+            <p><code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>,
+                <code>&lt;img&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>,
+                <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code></p>
+        </div>
+        <div class="text-left mb-6">
+            <h3>🧠 Visual:</h3>
+            <p>[INLINE][INLINE][INLINE]</p>
+            <p>They sit side by side.</p>
+        </div>
+        <div class="example-box">
+            <h3>💡 Example:</h3>
+            <pre><code>
+<p>This is <strong>bold</strong> and <em>italic</em> text.</p>
+            </code></pre>
+            <h3>🖼️ These appear inside a paragraph without breaking the line.</h3>
+            <p>This is <strong style="background-color: yellow;">bold</strong> and <em
+                    style="background-color: pink;">italic</em> text.</p>
+        </div>
+
+        <h2>🔁 Block vs Inline: Side-by-Side</h2>
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Block Element</th>
+                <th>Inline Element</th>
+            </tr>
+            <tr>
+                <td>Starts on new line</td>
+                <td>✅ Yes</td>
+                <td>❌ No</td>
+            </tr>
+            <tr>
+                <td>Width</td>
+                <td>Takes full width</td>
+                <td>Only takes space it needs</td>
+            </tr>
+            <tr>
+                <td>Stacks or flows?</td>
+                <td>Stacks vertically</td>
+                <td>Flows in the line (like words)</td>
+            </tr>
+            <tr>
+                <td>Can contain block tags</td>
+                <td>✅ Yes</td>
+                <td>❌ No</td>
+            </tr>
+            <tr>
+                <td>Can contain inline tags</td>
+                <td>✅ Yes</td>
+                <td>✅ Yes</td>
+            </tr>
+        </table>
+
+        <h2>🧪 Full Example:</h2>
+        <div class="example-box">
+            <pre><code>
+<!-- Block Example -->
+<div style="background: lightblue;">This is a block element (div)</div>
+<p style="background: lightgreen;">This is a block element (p)</p>
+
+<!-- Inline Example inside a paragraph -->
+<p>This is <strong style="background: yellow;">strong</strong> and 
+<em style="background: pink;">emphasized</em> text inside a block.</p>
+            </code></pre>
+            <h3>🖼️ Output:</h3>
+            <div style="background: lightblue;">This is a block element (div)</div>
+            <p style="background: lightgreen;">This is a block element (p)</p>
+            <p>This is <strong style="background: yellow;">strong</strong> and <em
+                    style="background: pink;">emphasized</em> text inside a block.</p>
+        </div>
+
+        <h2>⚠️ Bonus Tip: You Can Change the Behavior Using CSS!</h2>
+        <div class="text-left mb-6">
+            <p>Using CSS, you can force a block element to behave like inline and vice versa:</p>
+            <pre><code>
+display: inline;
+display: block;
+display: inline-block;
+            </code></pre>
+        </div>
+
+        <h2>🧠 Easy Way to Remember</h2>
+        <div class="text-left mb-6">
+            <p>🧱 Block = Big boxes (stacked like bricks)</p>
+            <p>🔤 Inline = Small parts (flow like words)</p>
+        </div>
+
+        <div class="text-center mt-8">
+            <a href="beginner-level.html" class="back-button">Back to Beginner Level</a>
+        </div>
+    </div>
+</body>
+
+</html>

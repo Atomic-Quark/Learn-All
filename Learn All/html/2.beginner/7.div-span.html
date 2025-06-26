@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&lt;div&gt; vs &lt;span&gt; in HTML – Explained Simply</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Arial', sans-serif;
+            color: #2d3748;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2c5282;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #3182ce;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ebf4ff;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        strong {
+            color: #2d3748;
+        }
+
+        pre {
+            background-color: #e2e8f0;
+            color: #2d3748;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.95rem;
+            white-space: pre-wrap;
+        }
+
+        code {
+            background-color: #e2e8f0;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.9em;
+            color: #c53030;
+        }
+
+        .example-box {
+            background-color: #f7fafc;
+            border-left: 5px solid #a0aec0;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .example-box h3 {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            font-size: 1.4rem;
+            color: #2c5282;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        th {
+            background-color: #edf2f7;
+            font-weight: 600;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-image: linear-gradient(to right, #4299e1, #63b3ed);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(66, 153, 225, 0.3);
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(66, 153, 225, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🧱🔤 &lt;div&gt; vs &lt;span&gt; in HTML</h1>
+        <p class="text-center text-xl text-gray-600 mb-6">Learn the difference between <code>&lt;div&gt;</code> and
+            <code>&lt;span&gt;</code>!</p>
+
+        <h2>🧱 1. &lt;div&gt; – Division (Block-level Element)</h2>
+        <div class="text-left mb-6">
+            <h3>✅ What It Does:</h3>
+            <ul>
+                <li>Groups large sections of HTML together.</li>
+                <li>Acts like a container box.</li>
+                <li>Is a block-level element: takes full width and starts on a new line.</li>
+                <li>Can contain text, images, other divs, and more.</li>
+            </ul>
+        </div>
+        <div class="text-left mb-6">
+            <h3>🧠 Easy Words:</h3>
+            <p>👉 “Use <code>&lt;div&gt;</code> to group big parts of your webpage, like headers, footers, sidebars, or
+                cards.”</p>
+        </div>
+        <div class="example-box">
+            <h3>💡 Example:</h3>
+            <pre><code>
+<div style="background-color: lightblue; padding: 10px;">
+  <h2>This is inside a div</h2>
+  <p>The div groups this heading and paragraph together.</p>
+</div>
+            </code></pre>
+            <h3>🖼️ What happens:</h3>
+            <p>Everything inside the <code>&lt;div&gt;</code> appears as one big block.</p>
+            <div style="background-color: lightblue; padding: 10px;">
+                <h2>This is inside a div</h2>
+                <p>The div groups this heading and paragraph together.</p>
+            </div>
+        </div>
+
+        <h2>🔤 2. &lt;span&gt; – Span (Inline-level Element)</h2>
+        <div class="text-left mb-6">
+            <h3>✅ What It Does:</h3>
+            <ul>
+                <li>Used to style or group small text or inline elements.</li>
+                <li>Does not break the line.</li>
+                <li>Is an inline element – behaves like words in a sentence.</li>
+            </ul>
+        </div>
+        <div class="text-left mb-6">
+            <h3>🧠 Easy Words:</h3>
+            <p>👉 “Use <code>&lt;span&gt;</code> to change just a word or part of a sentence.”</p>
+        </div>
+        <div class="example-box">
+            <h3>💡 Example:</h3>
+            <pre><code>
+<p>This is a <span style="color: red;">red word</span> in a sentence.</p>
+            </code></pre>
+            <h3>🖼️ What happens:</h3>
+            <p>Only the word “red word” becomes red. The rest stays the same – in the same line.</p>
+            <p>This is a <span style="color: red;">red word</span> in a sentence.</p>
+        </div>
+
+        <h2>🔁 &lt;div&gt; vs &lt;span&gt; — Side-by-Side Comparison</h2>
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>&lt;div&gt;</th>
+                <th>&lt;span&gt;</th>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>Block-level</td>
+                <td>Inline-level</td>
+            </tr>
+            <tr>
+                <td>Breaks Line?</td>
+                <td>✅ Yes (starts new line)</td>
+                <td>❌ No (stays in same line)</td>
+            </tr>
+            <tr>
+                <td>Takes Full Width</td>
+                <td>✅ Yes</td>
+                <td>❌ Only takes needed space</td>
+            </tr>
+            <tr>
+                <td>Common Use</td>
+                <td>Group big blocks (layout)</td>
+                <td>Style small parts (text, word)</td>
+            </tr>
+            <tr>
+                <td>Can contain...</td>
+                <td>Text, headings, lists, images</td>
+                <td>Text or inline elements only</td>
+            </tr>
+        </table>
+
+        <h2>🧪 Real-World Example:</h2>
+        <div class="example-box">
+            <pre><code>
+<!-- Grouping Section with <div> -->
+<div style="border: 2px solid black; padding: 10px;">
+  <h3>About Us</h3>
+  <p>We are a <span style="font-weight: bold; color: green;">creative team</span> building websites.</p>
+</div>
+            </code></pre>
+            <h3>🔍 What this does:</h3>
+            <ul>
+                <li>The <code>&lt;div&gt;</code> groups the heading and paragraph together.</li>
+                <li>The <code>&lt;span&gt;</code> only styles "creative team" inside the sentence.</li>
+            </ul>
+            <div style="border: 2px solid black; padding: 10px;">
+                <h3>About Us</h3>
+                <p>We are a <span style="font-weight: bold; color: green;">creative team</span> building websites.</p>
+            </div>
+        </div>
+
+        <h2>🧠 Remember:</h2>
+        <div class="text-left mb-6">
+            <p>Use <code>&lt;div&gt;</code> when you want to create layout structure (like sections, cards, containers).
+            </p>
+            <p>Use <code>&lt;span&gt;</code> when you want to style or target just a few words inside a line.</p>
+        </div>
+
+        <div class="text-center mt-8">
+            <a href="beginner-level.html" class="back-button">Back to Beginner Level</a>
+        </div>
+    </div>
+</body>
+
+</html>

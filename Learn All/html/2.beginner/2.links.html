@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links in HTML – Explained Simply</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Arial', sans-serif;
+            color: #2d3748;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2c5282;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #3182ce;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ebf4ff;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        strong {
+            color: #2d3748;
+        }
+
+        pre {
+            background-color: #e2e8f0;
+            color: #2d3748;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.95rem;
+            white-space: pre-wrap;
+        }
+
+        code {
+            background-color: #e2e8f0;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.9em;
+            color: #c53030;
+        }
+
+        .example-box {
+            background-color: #f7fafc;
+            border-left: 5px solid #a0aec0;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .example-box h3 {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            font-size: 1.4rem;
+            color: #2c5282;
+        }
+
+        .simple-words {
+            background-color: #e6fffa;
+            border-left: 5px solid #38b2ac;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            font-style: italic;
+            color: #2c7a7b;
+        }
+
+        .simple-words strong {
+            color: #2c7a7b;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        th {
+            background-color: #edf2f7;
+            font-weight: 600;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-image: linear-gradient(to right, #4299e1, #63b3ed);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(66, 153, 225, 0.3);
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(66, 153, 225, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔗 Links in HTML – Using the <a> Tag</h1>
+        <p class="text-center text-xl text-gray-600 mb-6">Learn how to create clickable links in HTML!</p>
+
+        <h2>🧠 What is the <a> Tag?</h2>
+        <div class="text-left mb-6">
+            <p>The <strong><a></strong> tag stands for "anchor". It is used to create a link that users can click to go
+                to:</p>
+            <ul>
+                <li>another page,</li>
+                <li>another website,</li>
+                <li>a specific section of a page,</li>
+                <li>or even to download a file.</li>
+            </ul>
+        </div>
+        <div class="example-box">
+            <h3>💡 Basic Structure:</h3>
+            <p><code><a href="URL">Link Text</a></code></p>
+            <ul>
+                <li><code>href</code> = “hyperlink reference” (the destination of the link)</li>
+                <li>The text between <code><a>...</a></code> is what the user clicks</li>
+            </ul>
+        </div>
+
+        <h2>🔸 1. Internal Links</h2>
+        <div class="text-left mb-6">
+            <p>An internal link connects to another page within the same website.</p>
+        </div>
+        <div class="example-box">
+            <h3>🏗️ Example:</h3>
+            <pre><code>
+<a href="about.html">Go to About Page</a>
+            </code></pre>
+            <h3>🖼️ What it does:</h3>
+            <p>When clicked, it opens the <code>about.html</code> file (inside your website).</p>
+        </div>
+        <div class="example-box">
+            <h3>📌 Section Link Example:</h3>
+            <pre><code>
+<a href="#contact">Go to Contact Section</a>
+<!-- Later on the page -->
+<h2 id="contact">Contact Us</h2>
+            </code></pre>
+            <h3>🖼️ What it does:</h3>
+            <p>Scrolls to the section with <code>id="contact"</code> on the same page.</p>
+        </div>
+
+        <h2>🔹 2. External Links</h2>
+        <div class="text-left mb-6">
+            <p>An external link connects to a different website on the internet.</p>
+        </div>
+        <div class="example-box">
+            <h3>🏗️ Example:</h3>
+            <pre><code>
+<a href="https://www.google.com">Visit Google</a>
+            </code></pre>
+            <h3>🖼️ What it does:</h3>
+            <p>Takes you to Google when you click it.</p>
+        </div>
+
+        <h2>🏁 3. target Attribute</h2>
+        <div class="text-left mb-6">
+            <p>The <code>target</code> attribute tells the browser how to open the link.</p>
+        </div>
+        <table>
+            <tr>
+                <th>Value</th>
+                <th>Meaning</th>
+            </tr>
+            <tr>
+                <td><code>_self</code></td>
+                <td>Open in the same tab (default)</td>
+            </tr>
+            <tr>
+                <td><code>_blank</code></td>
+                <td>Open in a new tab</td>
+            </tr>
+        </table>
+        <div class="example-box">
+            <h3>🔍 Examples:</h3>
+            <pre><code>
+<!-- Open in the same tab (default) -->
+<a href="about.html" target="_self">About Us</a>
+            </code></pre>
+            <h3>🖼️ What it does:</h3>
+            <p>Opens <code>about.html</code> in the same tab.</p>
+            <pre><code>
+<!-- Open in a new tab -->
+<a href="https://www.wikipedia.org" target="_blank">Visit Wikipedia</a>
+            </code></pre>
+            <h3>🖼️ What it does:</h3>
+            <p>Clicking this opens Wikipedia in a new browser tab.</p>
+        </div>
+
+        <h2>📎 Optional: Downloading Files</h2>
+        <div class="example-box">
+            <h3>🏗️ Example:</h3>
+            <pre><code>
+<a href="file.pdf" download>Download PDF</a>
+            </code></pre>
+            <h3>🖼️ What it does:</h3>
+            <p>Downloads the <code>file.pdf</code> when clicked.</p>
+        </div>
+
+        <h2>🚫 Make a Placeholder Link (no destination yet)</h2>
+        <div class="example-box">
+            <h3>🏗️ Example:</h3>
+            <pre><code>
+<a href="#">This doesn't go anywhere</a>
+            </code></pre>
+            <h3>🛑 Note:</h3>
+            <p>Don’t overuse this. It scrolls the page to the top.</p>
+        </div>
+
+        <h2>✅ Full Example with All Features</h2>
+        <div class="example-box">
+            <h3>🖼️ Output:</h3>
+            <pre><code>
+<h2>All Types of Links</h2>
+<!-- Internal link -->
+<a href="contact.html">Contact Page</a><br>
+<!-- External link in same tab -->
+<a href="https://www.example.com" target="_self">Visit Example (same tab)</a><br>
+<!-- External link in new tab -->
+<a href="https://www.google.com" target="_blank">Search on Google (new tab)</a><br>
+<!-- Section link -->
+<a href="#services">Go to Services Section</a><br>
+<!-- Download link -->
+<a href="resume.pdf" download>Download Resume</a><br>
+<!-- Placeholder link -->
+<a href="#">This link is not active yet</a>
+<!-- Section this points to -->
+<h3 id="services">Our Services</h3>
+<p>We offer web development, design, and SEO.</p>
+            </code></pre>
+            <h3>🖼️ Output:</h3>
+            <h2>All Types of Links</h2>
+            <a href="contact.html">Contact Page</a><br>
+            <a href="https://www.example.com" target="_self">Visit Example (same tab)</a><br>
+            <a href="https://www.google.com" target="_blank">Search on Google (new tab)</a><br>
+            <a href="#services">Go to Services Section</a><br>
+            <a href="resume.pdf" download>Download Resume</a><br>
+            <a href="#">This link is not active yet</a>
+            <h3 id="services">Our Services</h3>
+            <p>We offer web development, design, and SEO.</p>
+        </div>
+
+        <h2>🧠 Summary Table</h2>
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Purpose</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>href</code></td>
+                <td>URL or file to link to</td>
+                <td><code><a href="about.html"></code></td>
+            </tr>
+            <tr>
+                <td><code>target="_self"</code></td>
+                <td>Opens in same tab (default)</td>
+                <td><code><a target="_self"></code></td>
+            </tr>
+            <tr>
+                <td><code>target="_blank"</code></td>
+                <td>Opens in new tab</td>
+                <td><code><a target="_blank"></code></td>
+            </tr>
+            <tr>
+                <td><code>download</code></td>
+                <td>Downloads a file</td>
+                <td><code><a href="file.pdf" download></code></td>
+            </tr>
+        </table>
+
+        <div class="text-center mt-8">
+            <a href="beginner-level.html" class="back-button">Back to Beginner Level</a>
+        </div>
+    </div>
+</body>
+
+</html>

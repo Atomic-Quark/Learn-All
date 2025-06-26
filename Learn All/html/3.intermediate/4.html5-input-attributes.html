@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Input Attributes – Explained Simply</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #34495e;
+            /* Default text color */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #e74c3c;
+            text-align: center;
+            margin-bottom: 25px;
+            /* Add more space below h1 */
+        }
+
+        h2 {
+            color: #3498db;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            /* Space above h2 */
+            margin-bottom: 15px;
+            /* Space below h2 */
+        }
+
+        h3 {
+            color: #2ecc71;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p,
+        ul {
+            margin-bottom: 15px;
+            /* Consistent spacing for paragraphs and lists */
+        }
+
+        ul {
+            padding-left: 25px;
+            list-style-type: disc;
+        }
+
+        pre {
+            background: #ecf0f1;
+            padding: 15px;
+            /* Slightly more padding */
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            /* Monospace for code */
+            font-size: 0.95em;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            /* Ensures code wraps */
+            word-wrap: break-word;
+            /* Ensures long words break */
+        }
+
+        code {
+            background-color: #e0e0e0;
+            /* Lighter background for inline code */
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            color: #c0392b;
+            /* A subtle red for inline code */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            /* More margin for tables */
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            /* Slightly more padding */
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .example-output {
+            background-color: #f0f8ff;
+            /* Light blue background for visual output */
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-style: italic;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🖊️ HTML5 <code style="color: #e74c3c;">&lt;input&gt;</code> Attributes – Explained Simply</h1>
+        <p>HTML5 added many new attributes to the <code>&lt;input&gt;</code> element. These attributes help you control
+            user input, make forms smarter, and improve user experience.</p>
+
+        <h2>✅ 1. <code>placeholder</code></h2>
+        <p><strong>What it does:</strong> Shows light gray text inside the input box as a hint for the user.</p>
+        <pre><code>
+&lt;input type="text" placeholder="Enter your name"&gt;
+        </code></pre>
+        <p><strong>Why it helps:</strong> Tells the user what to type in the field.</p>
+        <div class="example-output">
+            <input type="text" placeholder="Enter your name"
+                style="padding: 5px; border: 1px solid #ccc; border-radius: 3px;">
+        </div>
+
+        <h2>🔒 2. <code>required</code></h2>
+        <p><strong>What it does:</strong> Makes the field mandatory. The form cannot be submitted unless this field has
+            a value.</p>
+        <pre><code>
+&lt;input type="email" required&gt;
+        </code></pre>
+        <p><strong>Why it helps:</strong> Ensures important information is provided before form submission.</p>
+        <div class="example-output">
+            <input type="email" required placeholder="Email (required)"
+                style="padding: 5px; border: 1px solid #ccc; border-radius: 3px;">
+        </div>
+
+        <h2>🔢 3. <code>min</code> and <code>max</code></h2>
+        <p><strong>What they do:</strong> Set the minimum and maximum allowed values for number, date, or time inputs.
+        </p>
+        <pre><code>
+&lt;input type="number" min="1" max="10"&gt;
+&lt;input type="date" min="2024-01-01" max="2025-12-31"&gt;
+        </code></pre>
+        <p><strong>Why it helps:</strong> Keeps input within a valid or safe range.</p>
+        <div class="example-output">
+            Number (1-10): <input type="number" min="1" max="10" value="5"
+                style="padding: 5px; border: 1px solid #ccc; border-radius: 3px; width: 80px;"><br>
+            Date (2024-2025): <input type="date" min="2024-01-01" max="2025-12-31" value="2024-06-26"
+                style="padding: 5px; border: 1px solid #ccc; border-radius: 3px;">
+        </div>
+
+        <h2>✋ 4. <code>maxlength</code> and <code>minlength</code></h2>
+        <p><strong>What they do:</strong> Set the maximum and minimum number of characters that can be entered into a
+            text input.</p>
+        <pre><code>
+&lt;input type="text" minlength="5" maxlength="10"&gt;
+        </code></pre>
+        <p><strong>Why it helps:</strong> Controls the length of the input text, preventing overly long or short
+            entries.</p>
+        <div class="example-output">
+            Text (5-10 chars): <input type="text" minlength="5" maxlength="10" placeholder="Type 5-10 chars"
+                style="padding: 5px; border: 1px solid #ccc; border-radius: 3px;">
+        </div>
+
+        <h2>🔁 5. <code>pattern</code></h2>
+        <p><strong>What it does:</strong> Uses a <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions" target="_blank"
+                style="color: #3498db; text-decoration: underline;">regular expression</a> to define the required format
+            for the input's value.</p>
+        <pre><code>
+&lt;input type="text" pattern="[A-Za-z]{3,}" title="Only letters, at least 3"&gt;
+        </code></pre>
+        <p><strong>Why it helps:</strong> Forces input to follow a specific pattern, like phone numbers, postal codes,
+            or custom IDs. The `title` attribute provides a helpful tooltip for the user.</p>
+        <div class="example-output">
+            Only letters (min 3): <input type="text" pattern="[A-Za-z]{3,}" title="Only letters, at least 3"
+                placeholder="e.g., ABC" style="padding: 5px; border: 1px solid #ccc; border-radius: 3px;">
+        </div>
+
+        <h2>🚫 6. <code>disabled</code></h2>
+        <p><strong>What it does:</strong> Makes the input element unusable and unclickable. Its value will not be
+            submitted with the form.</p>
+        <pre><code>
+&lt;input type="text" disabled value="You can't touch this!"&gt;
+        </code></pre>
+        <p><strong>Why it helps:</strong> Prevents user interaction with the field when input is not desired or allowed
+            (e.g., waiting for another action).</p>
+        <div class="example-output">
+            <input type="text" disabled value="You can't touch this!"
+                style="padding: 5px; border: 1px solid #ccc; border-radius: 3px; background-color: #e0e0e0;">
+        </div>
+
+        <h2>👁️ 7. <code>readonly</code></h2>
+        <p><strong>What it does:</strong> Makes the input element non-editable by the user, but its value will still be
+            submitted with the form.</p>
+        <pre><code>
+&lt;input type="text" value="This is read-only" readonly&gt;
+        </code></pre>
+        <p><strong>Why it helps:</strong> Shows fixed information to the user that should not be changed, but which is
+            still part of the form data (e.g., a calculated value).</p>
+        <div class="example-output">
+            <input type="text" value="This is read-only" readonly
+                style="padding: 5px; border: 1px solid #ccc; border-radius: 3px; background-color: #f8f8f8;">
+        </div>
+
+        <h2>📍 8. <code>autofocus</code></h2>
+        <p><strong>What it does:</strong> Automatically places the cursor (focus) on this input field when the page
+            loads.</p>
+        <pre><code>
+&lt;input type="text" autofocus placeholder="I'm focused!"&gt;
+        </code></pre>
+        <p><strong>Why it helps:</strong> Improves user experience by directing them immediately to the primary input
+            field, making form filling faster.</p>
+        <div class="example-output">
+            <input type="text" autofocus placeholder="I'm focused!"
+                style="padding: 5px; border: 1px solid #ccc; border-radius: 3px;">
+        </div>
+
+        <h2>📌 9. <code>autocomplete</code></h2>
+        <p><strong>What it does:</strong> Specifies whether the browser should provide autofill suggestions for the
+            input field based on previously entered data.</p>
+        <pre><code>
+&lt;input type="email" autocomplete="on"&gt;
+&lt;input type="name" autocomplete="name"&gt;
+&lt;input type="password" autocomplete="new-password"&gt;
+        </code></pre>
+        <p><strong>Why it helps:</strong> Saves time and effort for users by pre-filling common information (like email
+            addresses, names, addresses) from their browser's saved data.</p>
+        <div class="example-output">
+            Email: <input type="email" autocomplete="on" placeholder="Your email"
+                style="padding: 5px; border: 1px solid #ccc; border-radius: 3px;">
+        </div>
+
+        <h2>🔄 10. <code>multiple</code></h2>
+        <p><strong>What it does:</strong> Allows the user to select or enter multiple values for a single input element.
+            Commonly used with `type="file"` or `type="email"`.</p>
+        <pre><code>
+&lt;input type="file" multiple&gt;
+&lt;input type="email" multiple placeholder="email1@example.com, email2@example.com"&gt;
+        </code></pre>
+        <p><strong>Why it helps:</strong> Useful when you need to upload multiple files or collect multiple email
+            addresses in one field.</p>
+        <div class="example-output">
+            Upload multiple files: <input type="file" multiple
+                style="padding: 5px; border: 1px solid #ccc; border-radius: 3px;"><br>
+            Enter multiple emails: <input type="email" multiple placeholder="e.g., a@b.com, c@d.com"
+                style="padding: 5px; border: 1px solid #ccc; border-radius: 3px; width: 250px;">
+        </div>
+
+        <h2>⏳ 11. <code>step</code></h2>
+        <p><strong>What it does:</strong> Specifies the legal number intervals for numeric or date/time input fields
+            (e.g., `type="number"`, `type="range"`, `type="date"`, `type="time"`).</p>
+        <pre><code>
+&lt;input type="number" step="5" min="0" max="20"&gt;
+&lt;input type="range" min="0" max="100" step="10"&gt;
+        </code></pre>
+        <p><strong>Why it helps:</strong> Controls how much the value increases or decreases when using spinner buttons
+            or slider, ensuring input adheres to specific increments.</p>
+        <div class="example-output">
+            Number (step 5): <input type="number" step="5" min="0" max="20" value="5"
+                style="padding: 5px; border: 1px solid #ccc; border-radius: 3px; width: 80px;"><br>
+            Range (step 10): <input type="range" min="0" max="100" step="10" value="50" style="width: 200px;">
+        </div>
+
+        <h2>🧠 Summary Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Use</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>placeholder</code></td>
+                    <td>Hint inside input</td>
+                    <td><code>placeholder="Enter email"</code></td>
+                </tr>
+                <tr>
+                    <td><code>required</code></td>
+                    <td>Must be filled</td>
+                    <td><code>required</code></td>
+                </tr>
+                <tr>
+                    <td><code>min</code>/<code>max</code></td>
+                    <td>Set value range</td>
+                    <td><code>min="1" max="100"</code></td>
+                </tr>
+                <tr>
+                    <td><code>maxlength</code>/<code>minlength</code></td>
+                    <td>Limit characters</td>
+                    <td><code>maxlength="10"</code></td>
+                </tr>
+                <tr>
+                    <td><code>pattern</code></td>
+                    <td>Format matching (regex)</td>
+                    <td><code>pattern="[0-9]{3}"</code></td>
+                </tr>
+                <tr>
+                    <td><code>disabled</code></td>
+                    <td>Makes field unclickable/unsubmittable</td>
+                    <td><code>disabled</code></td>
+                </tr>
+                <tr>
+                    <td><code>readonly</code></td>
+                    <td>Shows value, not editable (still submittable)</td>
+                    <td><code>readonly</code></td>
+                </tr>
+                <tr>
+                    <td><code>autofocus</code></td>
+                    <td>Auto cursor on page load</td>
+                    <td><code>autofocus</code></td>
+                </tr>
+                <tr>
+                    <td><code>autocomplete</code></td>
+                    <td>Fill info from browser memory</td>
+                    <td><code>autocomplete="on"</code></td>
+                </tr>
+                <tr>
+                    <td><code>multiple</code></td>
+                    <td>Select more than one</td>
+                    <td><code>multiple</code></td>
+                </tr>
+                <tr>
+                    <td><code>step</code></td>
+                    <td>Set increment size for numbers/dates/times</td>
+                    <td><code>step="2"</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-button">Back to Main Page</a>
+        </div>
+    </div>
+</body>
+
+</html>

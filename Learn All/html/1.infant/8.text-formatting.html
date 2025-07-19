@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Refresh" content="100" ; url=8.text-formatting.html">
+    <title>Text Formatting Tags – Explained Simply</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Arial', sans-serif;
+            color: #2d3748;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 700px;
+            padding: 2.5rem;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #2c5282;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #3182ce;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ebf4ff;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+
+        ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        strong {
+            color: #2d3748;
+        }
+
+        pre {
+            background-color: #e2e8f0;
+            color: #2d3748;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.95rem;
+            white-space: pre-wrap;
+        }
+
+        code {
+            background-color: #e2e8f0;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.9em;
+            color: #c53030;
+        }
+
+        .example-box {
+            background-color: #f7fafc;
+            border-left: 5px solid #a0aec0;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .example-box h2 {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #2c5282;
+        }
+
+        .example-box pre {
+            margin-top: 0.5rem;
+        }
+
+        .simple-words {
+            background-color: #e6fffa;
+            border-left: 5px solid #38b2ac;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            font-style: italic;
+            color: #2c7a7b;
+        }
+
+        .simple-words strong {
+            color: #2c7a7b;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-image: linear-gradient(to right, #4299e1, #63b3ed);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(66, 153, 225, 0.3);
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(66, 153, 225, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>✍️ What are Text Formatting Tags?</h1>
+        <p class="text-center text-xl text-gray-600 mb-6">Learn how to style your text in HTML!</p>
+        <div class="text-left mb-6">
+            <p>Text formatting tags help you style your text to make it look <strong><b>bold</b></strong>,
+                <strong><i>italic</i></strong>, <strong><u>underlined</u></strong>, or even
+                <strong><mark>highlighted</mark></strong>.</p>
+            <p>These tags are used inside the <strong>
+
+                    <body>
+                </strong> of an HTML page to make your content look better or to show emphasis.</p>
+        </div>
+        <div class="text-left mb-6">
+            <h2>🔠 Common Text Formatting Tags</h2>
+            <table class="mx-auto border-collapse border border-gray-300">
+                <tr class="border border-gray-300">
+                    <th class="border border-gray-300 p-2 bg-gray-200">Tag</th>
+                    <th class="border border-gray-300 p-2 bg-gray-200">Name</th>
+                    <th class="border border-gray-300 p-2 bg-gray-200">What It Does</th>
+                    <th class="border border-gray-300 p-2 bg-gray-200">Example</th>
+                </tr>
+                <tr class="border border-gray-300">
+                    <td class="border border-gray-300 p-2"><strong>&lt;b&gt;</strong></td>
+                    <td class="border border-gray-300 p-2">Bold Text</td>
+                    <td class="border border-gray-300 p-2">Makes text bold</td>
+                    <td class="border border-gray-300 p-2"><strong><b>This is bold</b></strong></td>
+                </tr>
+                <tr class="border border-gray-300">
+                    <td class="border border-gray-300 p-2"><strong>&lt;strong&gt;</strong></td>
+                    <td class="border border-gray-300 p-2">Strong Text</td>
+                    <td class="border border-gray-300 p-2">Also bold, but for important text (helps SEO)</td>
+                    <td class="border border-gray-300 p-2"><strong><strong>Very important!</strong></strong></td>
+                </tr>
+                <tr class="border border-gray-300">
+                    <td class="border border-gray-300 p-2"><strong>&lt;i&gt;</strong></td>
+                    <td class="border border-gray-300 p-2">Italic Text</td>
+                    <td class="border border-gray-300 p-2">Makes text italic</td>
+                    <td class="border border-gray-300 p-2"><strong><i>This is italic</i></strong></td>
+                </tr>
+                <tr class="border border-gray-300">
+                    <td class="border border-gray-300 p-2"><strong>&lt;em&gt;</strong></td>
+                    <td class="border border-gray-300 p-2">Emphasis Text</td>
+                    <td class="border border-gray-300 p-2">Also italic, for emphasis</td>
+                    <td class="border border-gray-300 p-2"><strong><em>Pay attention</em></strong></td>
+                </tr>
+                <tr class="border border-gray-300">
+                    <td class="border border-gray-300 p-2"><strong>&lt;u&gt;</strong></td>
+                    <td class="border border-gray-300 p-2">Underline</td>
+                    <td class="border border-gray-300 p-2"><u>Underlines the text</u></td>
+                    <td class="border border-gray-300 p-2"><strong><u>Important note</u></strong></td>
+                </tr>
+                <tr class="border border-gray-300">
+                    <td class="border border-gray-300 p-2"><strong>&lt;mark&gt;</strong></td>
+                    <td class="border border-gray-300 p-2">Highlight</td>
+                    <td class="border border-gray-300 p-2"><mark>Highlights</mark> text like a highlighter</td>
+                    <td class="border border-gray-300 p-2"><strong><mark>Look here</mark></strong></td>
+                </tr>
+                <tr class="border border-gray-300">
+                    <td class="border border-gray-300 p-2"><strong>&lt;small&gt;</strong></td>
+                    <td class="border border-gray-300 p-2">Small Text</td>
+                    <td class="border border-gray-300 p-2">Makes text <small>smaller</small></td>
+                    <td class="border border-gray-300 p-2"><strong><small>tiny note</small></strong></td>
+                </tr>
+                <tr class="border border-gray-300">
+                    <td class="border border-gray-300 p-2"><strong>&lt;del&gt;</strong></td>
+                    <td class="border border-gray-300 p-2">Deleted Text</td>
+                    <td class="border border-gray-300 p-2">Shows <del>crossed out</del> text</td>
+                    <td class="border border-gray-300 p-2"><strong><del>Old price</del></strong></td>
+                </tr>
+                <tr class="border border-gray-300">
+                    <td class="border border-gray-300 p-2"><strong>&lt;ins&gt;</strong></td>
+                    <td class="border border-gray-300 p-2">Inserted Text</td>
+                    <td class="border border-gray-300 p-2">Shows <ins>underlined inserted</ins> text</td>
+                    <td class="border border-gray-300 p-2"><strong><ins>New content</ins></strong></td>
+                </tr>
+                <tr class="border border-gray-300">
+                    <td class="border border-gray-300 p-2"><strong>&lt;sub&gt;</strong></td>
+                    <td class="border border-gray-300 p-2">Subscript</td>
+                    <td class="border border-gray-300 p-2">Used for H<sub>2</sub>O</td>
+                    <td class="border border-gray-300 p-2"><strong><sub>subscript</sub></strong></td>
+                </tr>
+                <tr class="border border-gray-300">
+                    <td class="border border-gray-300 p-2"><strong>&lt;sup&gt;</strong></td>
+                    <td class="border border-gray-300 p-2">Superscript</td>
+                    <td class="border border-gray-300 p-2">Used for x<sup>2</sup></td>
+                    <td class="border border-gray-300 p-2"><strong><sup>superscript</sup></strong></td>
+                </tr>
+            </table>
+        </div>
+        <div class="example-box">
+            <h2>💡 Full Example:</h2>
+            <pre><code>
+&lt;p&gt;This is a &lt;b&gt;bold&lt;/b&gt; word.&lt;/p&gt;
+&lt;p&gt;This is an &lt;i&gt;italic&lt;/i&gt; word.&lt;/p&gt;
+&lt;p&gt;This is an &lt;u&gt;underlined&lt;/u&gt; word.&lt;/p&gt;
+&lt;p&gt;This is &lt;mark&gt;highlighted&lt;/mark&gt; text.&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O is water.&lt;/p&gt;
+&lt;p&gt;2&lt;sup&gt;3&lt;/sup&gt; equals 8.&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Old Price: ₹999&lt;/del&gt; &lt;ins&gt;New Price: ₹499&lt;/ins&gt;&lt;/p&gt;
+            </code></pre>
+            <h3>🖼️ Output in Browser:</h3>
+            <p>This is a <strong><b>bold</b></strong> word.</p>
+            <p>This is an <strong><i>italic</i></strong> word.</p>
+            <p>This is an <strong><u>underlined</u></strong> word.</p>
+            <p>This is <strong><mark>highlighted</mark></strong> text.</p>
+            <p>H<sub>2</sub>O is water.</p>
+            <p>2<sup>3</sup> equals 8.</p>
+            <p><del>Old Price: ₹999</del> <ins>New Price: ₹499</ins></p>
+        </div>
+        <div class="text-left mb-6">
+            <h2>🔔 Pro Tips:</h2>
+            <ul class="list-disc pl-5">
+                <li>Use <strong><strong></strong> and <strong><em></strong> when your text is important (search engines
+                        understand this better).</li>
+                <li>Use <strong><b></strong> and <strong><i></strong> for just visual styling.</li>
+                <li>You can combine tags like this:</li>
+                <p><strong><u>This is bold and underlined</u></strong></p>
+            </ul>
+        </div>
+        <div class="text-center mt-8">
+            <a href="infant-level.html" class="back-button">Back to Infant Level</a>
+        </div>
+    </div>
+</body>
+
+</html>

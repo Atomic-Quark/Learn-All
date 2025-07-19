@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Refresh" content="100" ; url=7.line-break-hr.html">
+    <title>&lt;br&gt; and &lt;hr&gt; Tags – Explained Simply</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            /* Light blue-gray background */
+            font-family: 'Arial', sans-serif;
+            color: #2d3748;
+            /* Dark gray text */
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 700px;
+            padding: 2.5rem;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #2c5282;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #3182ce;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ebf4ff;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+
+        ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        strong {
+            color: #2d3748;
+        }
+
+        pre {
+            background-color: #e2e8f0;
+            color: #2d3748;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.95rem;
+            white-space: pre-wrap;
+            /* Ensures code wraps within the pre block */
+        }
+
+        code {
+            background-color: #e2e8f0;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.9em;
+            color: #c53030;
+        }
+
+        .example-box {
+            background-color: #f7fafc;
+            border-left: 5px solid #a0aec0;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .example-box h2 {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #2c5282;
+        }
+
+        .example-box pre {
+            margin-top: 0.5rem;
+        }
+
+        .simple-words {
+            background-color: #e6fffa;
+            border-left: 5px solid #38b2ac;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            font-style: italic;
+            color: #2c7a7b;
+        }
+
+        .simple-words strong {
+            color: #2c7a7b;
+        }
+
+        /* Table specific styles for consistency */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            margin-left: auto;
+            /* Center table */
+            margin-right: auto;
+            /* Center table */
+        }
+
+        th,
+        td {
+            border: 1px solid #cbd5e0;
+            /* Light border for table cells */
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ebf8ff;
+            /* Light blue for table headers */
+            font-weight: 600;
+            color: #2c5282;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-image: linear-gradient(to right, #4299e1, #63b3ed);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(66, 153, 225, 0.3);
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(66, 153, 225, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔄 &lt;br&gt; – Line Break Tag</h1>
+        <p class="text-center text-xl text-gray-600 mb-6">Learn how to break lines in HTML!</p>
+
+        <div class="text-left mb-6">
+            <h2>✅ What It Does:</h2>
+            <p>The &lt;br&gt; tag is used to break a line and move the text to the next line — like when you press Enter
+                on your keyboard.</p>
+        </div>
+        <div class="text-left mb-6">
+            <h2>📌 It does not create a new paragraph — just moves to the next line.</h2>
+        </div>
+        <div class="simple-words">
+            <h2>🧠 Easy Words:</h2>
+            <p>👉 “Hey browser, please jump to the next line, but stay in the same paragraph!”</p>
+        </div>
+        <div class="example-box">
+            <h2>💡 Example:</h2>
+            <pre><code>
+&lt;p&gt;This is line one.&lt;br&gt;This is line two.&lt;/p&gt;
+            </code></pre>
+            <h3>🖼️ Output in the browser:</h3>
+            <p>This is line one.<br>This is line two.</p>
+        </div>
+        <div class="text-left mb-6">
+            <h2>🚨 Important:</h2>
+            <ul class="list-disc pl-5">
+                <li>&lt;br&gt; is a self-closing tag. You don’t need a closing tag like &lt;/br&gt;.</li>
+                <li>✅ Correct: &lt;br&gt;</li>
+                <li>❌ Wrong: &lt;br&gt;&lt;/br&gt;</li>
+            </ul>
+        </div>
+
+        <hr class="my-8 border-gray-300">
+        <h1>➖ &lt;hr&gt; – Horizontal Rule Tag</h1>
+        <p class="text-center text-xl text-gray-600 mb-6">Learn how to add dividers in HTML!</p>
+        <div class="text-left mb-6">
+            <h2>✅ What It Does:</h2>
+            <p>The &lt;hr&gt; tag adds a horizontal line (a divider) across the page.
+            </p>
+            <p>It's used to separate sections of content.</p>
+        </div>
+        <div class="simple-words">
+            <h2>🧠 Easy Words:</h2>
+            <p>👉 “Put a straight line across the page to divide stuff.”</p>
+        </div>
+        <div class="example-box">
+            <h2>💡 Example:</h2>
+            <pre><code>
+&lt;p&gt;This is the first section.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;This is the next section after the horizontal line.&lt;/p&gt;
+            </code></pre>
+            <h3>🖼️ Output in the browser:</h3>
+            <p>This is the first section.</p>
+            <hr>
+            <p>This is the next section after the horizontal line.</p>
+        </div>
+        <div class="text-left mb-6">
+            <h2>✨ Key Points:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Meaning</th>
+                        <th>Use for...</th>
+                        <th>Closing tag?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt;br&gt;</td>
+                        <td>Line Break</td>
+                        <td>Move text to next line</td>
+                        <td>❌ No</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;hr&gt;
+                        </td>
+                        <td>Horizontal Rule Line</td>
+                        <td>Divide sections with a line</td>
+                        <td>❌ No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center mt-8">
+            <a href="infant-level.html" class="back-button">Back to Infant Level</a>
+        </div>
+    </div>
+</body>
+
+</html>

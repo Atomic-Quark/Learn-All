@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Learn All</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <nav class="navbar glass">
+        <div class="container flex items-center justify-between">
+            <a href="index.html" class="logo flex items-center gap-2">
+                <div class="logo-icon"><i class="fas fa-code"></i></div>
+                <span class="logo-text">Learn All</span>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <div class="nav-links hidden md:flex gap-4">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="ai-chat.html" class="nav-link">AI Chat</a>
+                </div>
+                <a href="profile.html"
+                    class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent hover:bg-accent/30 transition-colors">
+                    <i class="fas fa-user"></i>
+                </a>
+                <div class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container pt-24 pb-12">
+        <h1 class="text-3xl font-bold mb-8">Settings</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Profile Settings -->
+            <div class="card">
+                <h2 class="text-xl font-bold mb-6"><i class="fas fa-user-cog text-accent"></i> Profile</h2>
+                <form id="profile-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm text-sec mb-2">Display Name</label>
+                        <input type="text" id="setting-name"
+                            class="w-full p-3 rounded bg-white/5 border border-white/10 focus:border-accent outline-none text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-sec mb-2">Email</label>
+                        <input type="email" id="setting-email"
+                            class="w-full p-3 rounded bg-white/5 border border-white/10 focus:border-accent outline-none text-white">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Profile</button>
+                </form>
+            </div>
+
+            <!-- App Settings -->
+            <div class="space-y-6">
+                <!-- API Key Settings -->
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-6"><i class="fas fa-key text-accent"></i> API Configuration</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm text-sec mb-2">Gemini API Key</label>
+                            <div class="flex gap-2">
+                                <input type="password" id="setting-api-key" placeholder="Enter your Gemini API Key"
+                                    class="w-full p-3 rounded bg-white/5 border border-white/10 focus:border-accent outline-none text-white">
+                                <button id="toggle-api-visibility" class="btn btn-ghost"><i
+                                        class="fas fa-eye"></i></button>
+                            </div>
+                            <p class="text-xs text-sec mt-1">Required for AI Tutor features. Stored locally.</p>
+                        </div>
+                        <button id="save-api-key" class="btn btn-outline w-full">Save API Key</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-6"><i class="fas fa-sliders-h text-accent"></i> Preferences</h2>
+                    <div class="flex items-center justify-between mb-4">
+                        <span>Dark Mode</span>
+                        <button id="setting-theme-toggle" class="btn btn-sm btn-outline">Toggle</button>
+                    </div>
+                </div>
+
+                <div class="card border-red-500/30">
+                    <h2 class="text-xl font-bold mb-6 text-red-500"><i class="fas fa-exclamation-triangle"></i> Danger
+                        Zone</h2>
+                    <p class="text-sec text-sm mb-4">Once you delete your progress, there is no going back. Please be
+                        certain.</p>
+                    <button id="reset-progress-btn"
+                        class="btn btn-outline border-red-500 text-red-500 hover:bg-red-500 hover:text-white">Reset All
+                        Progress</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Settings Page Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load User
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user) {
+                document.getElementById('setting-name').value = user.name;
+                document.getElementById('setting-email').value = user.email;
+            }
+
+            // Load API Key
+            const apiKey = localStorage.getItem('gemini_api_key');
+            if (apiKey) {
+                document.getElementById('setting-api-key').value = apiKey;
+            }
+
+            // Profile Save
+            document.getElementById('profile-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (user) {
+                    user.name = document.getElementById('setting-name').value;
+                    user.email = document.getElementById('setting-email').value;
+                    localStorage.setItem('user', JSON.stringify(user));
+                    alert('Profile updated!');
+                } else {
+                    alert('Please login to save profile details.');
+                }
+            });
+
+            // API Key Save
+            document.getElementById('save-api-key').addEventListener('click', () => {
+                const key = document.getElementById('setting-api-key').value.trim();
+                if (key) {
+                    localStorage.setItem('gemini_api_key', key);
+                    appState.apiKey = key; // Update global state
+                    alert('API Key saved successfully!');
+                } else {
+                    localStorage.removeItem('gemini_api_key');
+                    alert('API Key removed.');
+                }
+            });
+
+            // Toggle API Visibility
+            document.getElementById('toggle-api-visibility').addEventListener('click', () => {
+                const input = document.getElementById('setting-api-key');
+                const icon = document.querySelector('#toggle-api-visibility i');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.className = 'fas fa-eye-slash';
+                } else {
+                    input.type = 'password';
+                    icon.className = 'fas fa-eye';
+                }
+            });
+
+            // Theme Toggle
+            document.getElementById('setting-theme-toggle').addEventListener('click', () => {
+                document.getElementById('theme-toggle').click();
+            });
+
+            // Reset Progress
+            document.getElementById('reset-progress-btn').addEventListener('click', () => {
+                if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+                    localStorage.removeItem('user_progress');
+                    localStorage.removeItem('user_streak');
+                    localStorage.removeItem('user_activity');
+                    alert('Progress reset.');
+                    window.location.reload();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

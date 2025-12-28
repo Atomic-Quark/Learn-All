@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master JavaScript - Learn All</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="container flex items-center justify-between">
+            <a href="../index.html" class="logo flex items-center gap-2">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span class="logo-text">Learn All</span>
+            </a>
+
+            <div class="flex items-center gap-6">
+                <div class="nav-links hidden md:flex gap-6">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../projects.html" class="nav-link">Projects</a>
+                    <a href="../ai-chat.html" class="nav-link">AI Chat</a>
+                </div>
+                <div class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container pt-24 pb-12">
+        <!-- Header -->
+        <div class="flex items-center gap-6 mb-12 animate-fade-in">
+            <div class="card-icon"
+                style="background: rgba(247, 223, 30, 0.1); color: #f7df1e; width: 80px; height: 80px; font-size: 2.5rem;">
+                <i class="fab fa-js"></i>
+            </div>
+            <div>
+                <h1 class="text-4xl font-bold mb-2">JavaScript Mastery</h1>
+                <p class="text-sec text-lg">The programming language of the web. Make things interactive.</p>
+            </div>
+            <button onclick="markTopicComplete('js')" class="btn btn-primary ml-auto">
+                <i class="fas fa-check-circle"></i> Mark as Complete
+            </button>
+        </div>
+
+        <!-- Level Navigation -->
+        <div class="glass p-2 rounded-xl mb-8 flex overflow-x-auto gap-2 animate-fade-in delay-100">
+            <button class="btn btn-ghost flex-1 active" onclick="showLevel('infant', this)">
+                <i class="fas fa-baby"></i> Infant
+            </button>
+            <button class="btn btn-ghost flex-1" onclick="showLevel('beginner', this)">
+                <i class="fas fa-user-graduate"></i> Beginner
+            </button>
+            <button class="btn btn-ghost flex-1" onclick="showLevel('intermediate', this)">
+                <i class="fas fa-layer-group"></i> Intermediate
+            </button>
+            <button class="btn btn-ghost flex-1" onclick="showLevel('advanced', this)">
+                <i class="fas fa-code-branch"></i> Advanced
+            </button>
+            <button class="btn btn-ghost flex-1" onclick="showLevel('mastery', this)">
+                <i class="fas fa-crown"></i> Mastery
+            </button>
+        </div>
+
+        <!-- Content Sections -->
+        <div id="content-area" class="animate-fade-in delay-100">
+
+            <!-- Infant Level -->
+            <div id="infant" class="level-section">
+                <div class="card mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-accent">What is JavaScript? (The Brain)</h2>
+                    <p class="mb-4 text-lg">If HTML is the skeleton and CSS is the clothes, <strong>JavaScript is the
+                            brain.</strong></p>
+                    <p class="mb-4 text-lg">It makes the website <em>do</em> things.</p>
+                    <ul class="list-disc pl-6 mb-6 space-y-2 text-sec">
+                        <li>It handles clicks (Like the "Like" button).</li>
+                        <li>It does math (Calculator).</li>
+                        <li>It talks to servers (Loading new posts).</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-2xl font-bold mb-4">Your First Script</h2>
+                    <p class="mb-4">We use <code>console.log</code> to talk to the computer.</p>
+                    <div class="bg-black/50 p-6 rounded-xl font-mono text-sm border border-white/10">
+                        <span class="text-blue-300">console</span>.<span class="text-yellow-300">log</span>(<span
+                            class="text-green-300">"Hello World!"</span>);<br>
+                        <span class="text-gray-500">// Prints "Hello World!" to the console</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beginner Level -->
+            <div id="beginner" class="level-section hidden">
+                <div class="card mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-accent">Variables & Data</h2>
+                    <p class="mb-4">Variables are like boxes where we store information.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-white/5 rounded-lg">
+                            <code class="text-accent text-lg">let x = 5;</code>
+                            <p class="text-sm mt-2 text-sec">A number box.</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-lg">
+                            <code class="text-accent text-lg">let name = "John";</code>
+                            <p class="text-sm mt-2 text-sec">A text box (String).</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-lg">
+                            <code class="text-accent text-lg">const pi = 3.14;</code>
+                            <p class="text-sm mt-2 text-sec">A box that can't change.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intermediate Level -->
+            <div id="intermediate" class="level-section hidden">
+                <div class="card mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-accent">Functions & Logic</h2>
+                    <p class="mb-4">Functions are little machines that do a specific job.</p>
+
+                    <div class="bg-black/50 p-6 rounded-xl font-mono text-sm border border-white/10">
+                        <span class="text-purple-400">function</span> <span class="text-yellow-300">greet</span>(name)
+                        {<br>
+                        &nbsp;&nbsp;<span class="text-purple-400">return</span> <span class="text-green-300">"Hello
+                            "</span> + name;<br>
+                        }<br><br>
+                        <span class="text-yellow-300">greet</span>(<span class="text-green-300">"Alice"</span>); <span
+                            class="text-gray-500">// Returns "Hello Alice"</span>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-2 mt-4">If / Else</h3>
+                    <div class="bg-black/50 p-4 rounded-lg font-mono text-sm">
+                        <span class="text-purple-400">if</span> (age >= 18) {<br>
+                        &nbsp;&nbsp;<span class="text-blue-300">console</span>.<span
+                            class="text-yellow-300">log</span>(<span class="text-green-300">"Adult"</span>);<br>
+                        } <span class="text-purple-400">else</span> {<br>
+                        &nbsp;&nbsp;<span class="text-blue-300">console</span>.<span
+                            class="text-yellow-300">log</span>(<span class="text-green-300">"Kid"</span>);<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Level -->
+            <div id="advanced" class="level-section hidden">
+                <div class="card mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-accent">DOM Manipulation</h2>
+                    <p class="mb-4">Changing the HTML using JavaScript.</p>
+
+                    <div class="bg-black/50 p-6 rounded-xl font-mono text-sm border border-white/10">
+                        <span class="text-purple-400">const</span> btn = <span
+                            class="text-blue-300">document</span>.<span
+                            class="text-yellow-300">getElementById</span>(<span
+                            class="text-green-300">"myBtn"</span>);<br>
+                        btn.<span class="text-yellow-300">addEventListener</span>(<span
+                            class="text-green-300">"click"</span>, () => {<br>
+                        &nbsp;&nbsp;<span class="text-blue-300">alert</span>(<span
+                            class="text-green-300">"Clicked!"</span>);<br>
+                        });
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mastery Level -->
+            <div id="mastery" class="level-section hidden">
+                <div class="card mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-accent">Async & API</h2>
+                    <p class="mb-4">Talking to the outside world (Servers, Databases).</p>
+
+                    <div class="bg-black/50 p-6 rounded-xl font-mono text-sm border border-white/10">
+                        <span class="text-purple-400">async function</span> <span
+                            class="text-yellow-300">getData</span>() {<br>
+                        &nbsp;&nbsp;<span class="text-purple-400">const</span> response = <span
+                            class="text-purple-400">await</span> <span class="text-yellow-300">fetch</span>(<span
+                            class="text-green-300">"https://api.com/data"</span>);<br>
+                        &nbsp;&nbsp;<span class="text-purple-400">const</span> data = <span
+                            class="text-purple-400">await</span> response.<span
+                            class="text-yellow-300">json</span>();<br>
+                        &nbsp;&nbsp;<span class="text-blue-300">console</span>.<span
+                            class="text-yellow-300">log</span>(data);<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script>
+        function showLevel(levelId, btn) {
+            // Hide all sections
+            document.querySelectorAll('.level-section').forEach(el => el.classList.add('hidden'));
+            // Show target section
+            document.getElementById(levelId).classList.remove('hidden');
+
+            // Update buttons
+            document.querySelectorAll('.level-nav button').forEach(b => {
+                b.classList.remove('active', 'btn-primary');
+                b.classList.add('btn-ghost');
+            });
+
+            // Highlight active button
+            btn.classList.remove('btn-ghost');
+            btn.classList.add('active'); // CSS handles the styling for .active
+        }
+
+        // Initialize first tab
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstBtn = document.querySelector('.level-nav button');
+            if (firstBtn) showLevel('infant', firstBtn);
+        });
+    </script>
+
+    <style>
+        /* Local overrides for this page */
+        .level-nav .active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</body>
+
+</html>

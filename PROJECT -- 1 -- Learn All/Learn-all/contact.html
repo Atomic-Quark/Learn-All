@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Learn All</title>
+    <meta name="description" content="Get in touch with the Learn All team">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        .contact-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-card {
+            padding: 2rem;
+            border-radius: 16px;
+            background: var(--card-bg);
+            border: var(--glass-border);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(139, 92, 246, 0.15);
+            display: flex;
+            align-items: center;
+            justify-center;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar glass">
+        <div class="container flex items-center justify-between">
+            <a href="index.html" class="logo flex items-center gap-2">
+                <div class="logo-icon"><i class="fas fa-code"></i></div>
+                <span class="logo-text">Learn All</span>
+            </a>
+
+            <div class="flex items-center gap-6">
+                <div class="nav-links hidden md:flex gap-6">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="about.html" class="nav-link">About</a>
+                </div>
+                <a href="profile.html"
+                    class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent hover:bg-accent/30 transition-colors">
+                    <i class="fas fa-user"></i>
+                </a>
+                <div class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent pointer-events-none"></div>
+        <div class="container text-center relative z-10 pt-20 pb-12">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">Get in <span
+                    class="text-gradient">Touch</span></h1>
+            <p class="text-xl text-sec mb-8 max-w-2xl mx-auto animate-fade-in" style="animation-delay: 0.1s">
+                Have a question, suggestion, or just want to say hi? We'd love to hear from you!
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container pb-20">
+        <!-- Contact Methods -->
+        <section class="mb-16">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Email Us</h3>
+                    <p class="text-sec mb-4">For general inquiries and support</p>
+                    <a href="mailto:support@learnall.com" class="text-accent font-medium hover:underline">
+                        support@learnall.com
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">GitHub</h3>
+                    <p class="text-sec mb-4">Report bugs or contribute</p>
+                    <a href="https://github.com/learnall" target="_blank"
+                        class="text-accent font-medium hover:underline">
+                        github.com/learnall
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Twitter</h3>
+                    <p class="text-sec mb-4">Follow us for updates</p>
+                    <a href="https://twitter.com/learnall" target="_blank"
+                        class="text-accent font-medium hover:underline">
+                        @learnall
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Discord</h3>
+                    <p class="text-sec mb-4">Join our community</p>
+                    <a href="#" onclick="alert('Discord server link coming soon!')"
+                        class="text-accent font-medium hover:underline">
+                        Join Discord
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section>
+            <div class="card p-12 max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8">Send us a Message</h2>
+
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" class="form-input" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" required placeholder="you@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Subject</label>
+                        <input type="text" class="form-input" required placeholder="How can we help?">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-textarea" required
+                            placeholder="Tell us what's on your mind..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you soon. 📧');
+            e.target.reset();
+        });
+    </script>
+</body>
+
+</html>

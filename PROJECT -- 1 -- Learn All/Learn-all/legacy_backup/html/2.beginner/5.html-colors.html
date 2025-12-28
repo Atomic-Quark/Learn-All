@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Colors – Explained Simply</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Arial', sans-serif;
+            color: #2d3748;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2c5282;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #3182ce;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ebf4ff;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        strong {
+            color: #2d3748;
+        }
+
+        pre {
+            background-color: #e2e8f0;
+            color: #2d3748;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.95rem;
+            white-space: pre-wrap;
+        }
+
+        code {
+            background-color: #e2e8f0;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.9em;
+            color: #c53030;
+        }
+
+        .example-box {
+            background-color: #f7fafc;
+            border-left: 5px solid #a0aec0;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .example-box h3 {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            font-size: 1.4rem;
+            color: #2c5282;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        th {
+            background-color: #edf2f7;
+            font-weight: 600;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-image: linear-gradient(to right, #4299e1, #63b3ed);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(66, 153, 225, 0.3);
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(66, 153, 225, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎨 HTML Colors – Full Explanation with Examples</h1>
+        <p class="text-center text-xl text-gray-600 mb-6">Learn how to add colors to your web pages!</p>
+
+        <h2>🧠 How to Add Color in HTML</h2>
+        <div class="text-left mb-6">
+            <p>Colors in HTML are used to style text, backgrounds, borders, and more. They make your web pages look
+                beautiful, organized, and easy to read.</p>
+            <p>You can apply colors using the <code>style</code> attribute or through CSS.</p>
+        </div>
+        <div class="example-box">
+            <pre><code>
+&lt;tag style="color: red;">Text&lt;/tag>
+&lt;tag style="background-color: yellow;">Text<\&lt;/tag>
+            </code></pre>
+        </div>
+
+        <h2>✅ Ways to Define Colors</h2>
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Example</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>Color Name</td>
+                <td><code>red</code>, <code>blue</code>, <code>green</code></td>
+                <td>Simple and readable</td>
+            </tr>
+            <tr>
+                <td>HEX Code</td>
+                <td><code>#FF0000</code>, <code>#00FF00</code></td>
+                <td>Used for precise shades</td>
+            </tr>
+            <tr>
+                <td>RGB Value</td>
+                <td><code>rgb(255, 0, 0)</code></td>
+                <td>Red-Green-Blue values (0–255)</td>
+            </tr>
+            <tr>
+                <td>RGBA Value</td>
+                <td><code>rgba(255, 0, 0, 0.5)</code></td>
+                <td>Same as RGB, but with transparency</td>
+            </tr>
+            <tr>
+                <td>HSL Value</td>
+                <td><code>hsl(0, 100%, 50%)</code></td>
+                <td>Hue, Saturation, Lightness</td>
+            </tr>
+            <tr>
+                <td>HSLA Value</td>
+                <td><code>hsla(0, 100%, 50%, 0.3)</code></td>
+                <td>HSL + alpha (transparency)</td>
+            </tr>
+        </table>
+
+        <h2>🔹 1. Named Colors</h2>
+        <div class="text-left mb-6">
+            <p>HTML supports 140+ named colors like <code>red</code>, <code>blue</code>, <code>green</code>,
+                <code>orange</code>, etc.</p>
+        </div>
+        <div class="example-box">
+            <pre><code>
+&lt;p style="color: red;">This is red text&lt;/p>
+&lt;p style="background-color: lightblue;">This has a light blue background&lt;/p>
+            </code></pre>
+            <h3>🖼️ Output:</h3>
+            <p style="color: red;">This is red text</p>
+            <p style="background-color: lightblue;">This has a light blue background</p>
+        </div>
+
+        <h2>🔸 2. HEX Codes</h2>
+        <div class="text-left mb-6">
+            <p>HEX (hexadecimal) values start with <code>#</code> and include 6 digits.</p>
+            <p>Example: <code>#FF0000</code> = red</p>
+        </div>
+        <div class="example-box">
+            <pre><code>
+&lt;p style="color: #FF5733;">This is HEX colored text&lt;/p>
+            </code></pre>
+            <h3>🖼️ Output:</h3>
+            <p style="color: #FF5733;">This is HEX colored text</p>
+        </div>
+        <div class="text-left mb-6">
+            <p>🎨 <code>#000000</code> = black</p>
+            <p>🎨 <code>#FFFFFF</code> = white</p>
+            <p>🎨 <code>#00FF00</code> = green</p>
+        </div>
+
+        <h2>🔻 3. RGB and RGBA</h2>
+        <div class="text-left mb-6">
+            <p>RGB = Red, Green, Blue</p>
+            <p>Each value ranges from 0 to 255</p>
+        </div>
+        <div class="example-box">
+            <pre><code>
+&lt;p style="color: rgb(255, 0, 0);">This is red&lt;/p>
+&lt;p style="background-color: rgba(0, 0, 255, 0.3);">This is semi-transparent blue&lt;/p>
+            </code></pre>
+            <h3>🖼️ Output:</h3>
+            <p style="color: rgb(255, 0, 0);">This is red</p>
+            <p style="background-color: rgba(0, 0, 255, 0.3);">This is semi-transparent blue</p>
+        </div>
+
+        <h2>🔸 4. HSL and HSLA</h2>
+        <div class="text-left mb-6">
+            <p>HSL = Hue (0–360), Saturation %, Lightness %</p>
+            <p>HSLA adds transparency</p>
+        </div>
+        <div class="example-box">
+            <pre><code>
+&lt;p style="color: hsl(120, 100%, 25%);">Dark Green Text&lt;/p>
+&lt;p style="background-color: hsla(240, 100%, 70%, 0.4);">Light Transparent Blue&lt;/p>
+            </code></pre>
+            <h3>🖼️ Output:</h3>
+            <p style="color: hsl(120, 100%, 25%);">Dark Green Text</p>
+            <p style="background-color: hsla(240, 100%, 70%, 0.4);">Light Transparent Blue</p>
+        </div>
+
+        <h2>🎯 Common Color Properties in HTML/CSS</h2>
+        <table>
+            <tr>
+                <th>Property</th>
+                <th>What It Does</th>
+            </tr>
+            <tr>
+                <td><code>color</code></td>
+                <td>Changes text color</td>
+            </tr>
+            <tr>
+                <td><code>background-color</code></td>
+                <td>Changes background color</td>
+            </tr>
+            <tr>
+                <td><code>border-color</code></td>
+                <td>Changes border color</td>
+            </tr>
+        </table>
+
+        <h2>🧪 Full Example:</h2>
+        <div class="example-box">
+            <pre><code>
+&lt;h2 style="color: darkblue;">Welcome to My Colorful Page&lt;/h2>
+&lt;p style="color: red;">This is red text using a color name.&lt;/p>
+&lt;p style="color: #00FF00;">This is green text using HEX code.&lt;/p>
+&lt;p style="color: rgb(0, 0, 255);">This is blue text using RGB.&lt;/p>
+&lt;p style="background-color: yellow;">Yellow background color.&lt;/p>
+&lt;p style="background-color: rgba(0, 0, 0, 0.1);">Semi-transparent black background.&lt;/p>
+            </code></pre>
+            <h3>🖼️ Output:</h3>
+            <h2 style="color: darkblue;">Welcome to My Colorful Page</h2>
+            <p style="color: red;">This is red text using a color name.</p>
+            <p style="color: #00FF00;">This is green text using HEX code.</p>
+            <p style="color: rgb(0, 0, 255);">This is blue text using RGB.</p>
+            <p style="background-color: yellow;">Yellow background color.</p>
+            <p style="background-color: rgba(0, 0, 0, 0.1);">Semi-transparent black background.</p>
+        </div>
+
+        <h2>🧠 Summary Table</h2>
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Example</th>
+                <th>Good For...</th>
+            </tr>
+            <tr>
+                <td>Named</td>
+                <td><code>red</code>, <code>blue</code></td>
+                <td>Simplicity, basic uses</td>
+            </tr>
+            <tr>
+                <td>HEX</td>
+                <td><code>#FF0000</code>, <code>#333333</code></td>
+                <td>Precise colors, web-safe</td>
+            </tr>
+            <tr>
+                <td>RGB</td>
+                <td><code>rgb(0,255,0)</code></td>
+                <td>Easy to mix color levels</td>
+            </tr>
+            <tr>
+                <td>RGBA</td>
+                <td><code>rgba(255,0,0,0.5)</code></td>
+                <td>Adding transparency</td>
+            </tr>
+            <tr>
+                <td>HSL</td>
+                <td><code>hsl(0, 100%, 50%)</code></td>
+                <td>Designer-friendly coloring</td>
+            </tr>
+            <tr>
+                <td>HSLA</td>
+                <td><code>hsla(0, 100%, 50%, 0.2)</code></td>
+                <td>Transparency + HSL</td>
+            </tr>
+        </table>
+
+        <div class="text-center mt-8">
+            <a href="beginner-level.html" class="back-button">Back to Beginner Level</a>
+        </div>
+    </div>
+</body>
+
+</html>

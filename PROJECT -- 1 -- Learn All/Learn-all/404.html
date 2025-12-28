@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <nav class="navbar glass">
+        <div class="container flex items-center justify-between">
+            <a href="index.html" class="logo flex items-center gap-2">
+                <div class="logo-icon"><i class="fas fa-code"></i></div>
+                <span class="logo-text">Learn All</span>
+            </a>
+            <div class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></div>
+        </div>
+    </nav>
+
+    <main class="container flex flex-col items-center justify-center min-h-screen text-center">
+        <h1 class="text-9xl font-bold text-accent mb-4">404</h1>
+        <h2 class="text-3xl font-bold mb-6">Page Not Found</h2>
+        <p class="text-sec mb-8 max-w-md">The page you are looking for might have been removed, had its name changed, or
+            is temporarily unavailable.</p>
+        <a href="index.html" class="btn btn-primary"><i class="fas fa-home"></i> Go Home</a>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

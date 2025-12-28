@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Learn All</title>
+    <meta name="description" content="Login to your Learn All account and continue your programming journey">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .auth-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            padding-top: 120px;
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 450px;
+            background: var(--card-bg);
+            border: var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .auth-header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .auth-header p {
+            color: var(--text-sec);
+            font-size: 1rem;
+        }
+
+        .social-login {
+            display: grid;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-btn {
+            width: 100%;
+            padding: 0.875rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: transparent;
+            color: var(--text-main);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent);
+        }
+
+        .social-btn i {
+            font-size: 1.2rem;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+            color: var(--text-sec);
+            font-size: 0.875rem;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .divider span {
+            padding: 0 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 0.9rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-main);
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            color: var(--text-sec);
+        }
+
+        .checkbox-label input {
+            accent-color: var(--accent);
+        }
+
+        .forgot-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .auth-footer p {
+            color: var(--text-sec);
+            font-size: 0.9rem;
+        }
+
+        .auth-footer a {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar glass">
+        <div class="container flex items-center justify-between">
+            <a href="index.html" class="logo flex items-center gap-2">
+                <div class="logo-icon"><i class="fas fa-code"></i></div>
+                <span class="logo-text">Learn All</span>
+            </a>
+
+            <div class="flex items-center gap-6">
+                <div class="nav-links hidden md:flex gap-6">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="ai-chat.html" class="nav-link">AI Tutor</a>
+                </div>
+                <div class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Auth Container -->
+    <div class="auth-container">
+        <div class="auth-card animate-fade-in">
+            <div class="auth-header">
+                <h1>Welcome Back!</h1>
+                <p>Login to continue your learning journey</p>
+            </div>
+
+            <div class="social-login">
+                <button class="social-btn" onclick="alert('Google OAuth integration coming soon!')">
+                    <i class="fab fa-google"></i>
+                    <span>Continue with Google</span>
+                </button>
+                <button class="social-btn" onclick="alert('GitHub OAuth integration coming soon!')">
+                    <i class="fab fa-github"></i>
+                    <span>Continue with GitHub</span>
+                </button>
+            </div>
+
+            <div class="divider">
+                <span>or continue with email</span>
+            </div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" id="email" class="form-input" required placeholder="you@example.com"
+                        autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" id="password" class="form-input" required placeholder="••••••••"
+                        autocomplete="current-password">
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="remember">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.875rem;">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="register.html">Sign up for free</a></p>
+                <a href="index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const remember = document.getElementById('remember').checked;
+
+            // Check for registered user
+            const storedUser = JSON.parse(localStorage.getItem('registered_user'));
+
+            if (storedUser && storedUser.email === email && storedUser.password === password) {
+                // Store user session
+                localStorage.setItem('user', JSON.stringify(storedUser));
+
+                if (remember) {
+                    localStorage.setItem('remember_me', 'true');
+                }
+
+                // Show success
+                alert('Login successful! Welcome back, ' + storedUser.name + '! 🎉');
+
+                // Redirect to home
+                window.location.href = 'index.html';
+            } else {
+                alert('Invalid email or password. Please try again or sign up first!');
+            }
+        });
+
+        // Check if user is already logged in
+        const currentUser = JSON.parse(localStorage.getItem('user'));
+        if (currentUser) {
+            if (confirm('You are already logged in as ' + currentUser.name + '. Go to dashboard?')) {
+                window.location.href = 'profile.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master C - Learn All</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="container flex items-center justify-between">
+            <a href="../index.html" class="logo flex items-center gap-2">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span class="logo-text">Learn All</span>
+            </a>
+
+            <div class="flex items-center gap-6">
+                <div class="nav-links hidden md:flex gap-6">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../projects.html" class="nav-link">Projects</a>
+                    <a href="../ai-chat.html" class="nav-link">AI Chat</a>
+                </div>
+                <div class="theme-toggle" id="theme-toggle">
+                    document.querySelectorAll('.level-section').forEach(el => el.classList.add('hidden'));
+                    // Show target section
+                    document.getElementById(levelId).classList.remove('hidden');
+
+                    // Update buttons
+                    document.querySelectorAll('.level-nav button').forEach(b => {
+                    b.classList.remove('active', 'btn-primary');
+                    b.classList.add('btn-ghost');
+                    });
+
+                    // Highlight active button
+                    btn.classList.remove('btn-ghost');
+                    btn.classList.add('active'); // CSS handles the styling for .active
+                    }
+
+                    // Initialize first tab
+                    document.addEventListener('DOMContentLoaded', () => {
+                    const firstBtn = document.querySelector('.level-nav button');
+                    if (firstBtn) showLevel('infant', firstBtn);
+                    });
+                    </script>
+
+                    <style>
+                        /* Local overrides for this page */
+                        .level-nav .active {
+                            background: var(--accent);
+                            color: white;
+                        }
+
+                        .hidden {
+                            display: none;
+                        }
+                    </style>
+</body>
+
+</html>

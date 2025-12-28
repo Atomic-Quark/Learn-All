@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master CSS - Learn All</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="container flex items-center justify-between">
+            <a href="../index.html" class="logo flex items-center gap-2">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span class="logo-text">Learn All</span>
+            </a>
+
+            <div class="flex items-center gap-6">
+                <div class="nav-links hidden md:flex gap-6">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../projects.html" class="nav-link">Projects</a>
+                    <a href="../ai-chat.html" class="nav-link">AI Chat</a>
+                </div>
+                <div class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container pt-24 pb-12">
+        <!-- Header -->
+        <div class="flex items-center gap-6 mb-12 animate-fade-in">
+            <div class="card-icon"
+                style="background: rgba(38, 77, 228, 0.1); color: #264de4; width: 80px; height: 80px; font-size: 2.5rem;">
+                <i class="fab fa-css3-alt"></i>
+            </div>
+            <div>
+                <h1 class="text-4xl font-bold mb-2">CSS Mastery</h1>
+                <p class="text-sec text-lg">Cascading Style Sheets - making the web beautiful.</p>
+            </div>
+            <button onclick="markTopicComplete('css')" class="btn btn-primary ml-auto">
+                <i class="fas fa-check-circle"></i> Mark as Complete
+            </button>
+        </div>
+
+        <!-- Level Navigation -->
+        <div class="glass p-2 rounded-xl mb-8 flex overflow-x-auto gap-2 animate-fade-in delay-100">
+            <button class="btn btn-ghost flex-1 active" onclick="showLevel('infant', this)">
+                <i class="fas fa-baby"></i> Infant
+            </button>
+            <button class="btn btn-ghost flex-1" onclick="showLevel('beginner', this)">
+                <i class="fas fa-user-graduate"></i> Beginner
+            </button>
+            <button class="btn btn-ghost flex-1" onclick="showLevel('intermediate', this)">
+                <i class="fas fa-layer-group"></i> Intermediate
+            </button>
+            <button class="btn btn-ghost flex-1" onclick="showLevel('advanced', this)">
+                <i class="fas fa-code-branch"></i> Advanced
+            </button>
+            <button class="btn btn-ghost flex-1" onclick="showLevel('mastery', this)">
+                <i class="fas fa-crown"></i> Mastery
+            </button>
+        </div>
+
+        <!-- Content Sections -->
+        <div id="content-area" class="animate-fade-in delay-100">
+
+            <!-- Infant Level -->
+            <div id="infant" class="level-section">
+                <div class="card mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-accent">What is CSS? (The Clothes)</h2>
+                    <p class="mb-4 text-lg">If HTML is the skeleton, <strong>CSS is the skin and clothes.</strong></p>
+                    <p class="mb-4 text-lg">Without CSS, every website would look like a boring Word document from 1995.
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 space-y-2 text-sec">
+                        <li>It adds color (Red shirt? Blue pants?).</li>
+                        <li>It changes size (Big hat? Small shoes?).</li>
+                        <li>It moves things around (Put the logo on the left).</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-2xl font-bold mb-4">Your First Style</h2>
+                    <p class="mb-4">CSS looks like a list of rules.</p>
+                    <div class="bg-black/50 p-6 rounded-xl font-mono text-sm border border-white/10">
+                        <span class="text-yellow-400">h1</span> {<br>
+                        &nbsp;&nbsp;<span class="text-blue-300">color</span>: <span
+                            class="text-green-300">red</span>;<br>
+                        &nbsp;&nbsp;<span class="text-blue-300">font-size</span>: <span
+                            class="text-green-300">50px</span>;<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beginner Level -->
+            <div id="beginner" class="level-section hidden">
+                <div class="card mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-accent">Selectors & Colors</h2>
+                    <p class="mb-4">How do we tell CSS which element to style? We use <strong>Selectors</strong>.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-white/5 rounded-lg">
+                            <code class="text-accent text-lg">p { ... }</code>
+                            <p class="text-sm mt-2 text-sec">Selects ALL paragraphs.</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-lg">
+                            <code class="text-accent text-lg">.classname { ... }</code>
+                            <p class="text-sm mt-2 text-sec">Selects elements with specific class.</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-lg">
+                            <code class="text-accent text-lg">#idname { ... }</code>
+                            <p class="text-sm mt-2 text-sec">Selects ONE unique element.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intermediate Level -->
+            <div id="intermediate" class="level-section hidden">
+                <div class="card mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-accent">Box Model & Flexbox</h2>
+                    <p class="mb-4">Every element in HTML is a box. CSS controls that box.</p>
+
+                    <h3 class="text-xl font-bold mb-2 mt-4">The Box Model</h3>
+                    <ul class="list-disc pl-6 mb-4 text-sec">
+                        <li><strong>Content</strong>: The text or image.</li>
+                        <li><strong>Padding</strong>: Space INSIDE the border.</li>
+                        <li><strong>Border</strong>: The line around the box.</li>
+                        <li><strong>Margin</strong>: Space OUTSIDE the border.</li>
+                    </ul>
+
+                    <h3 class="text-xl font-bold mb-2 mt-4">Flexbox</h3>
+                    <p class="mb-4">The magic tool to align things side-by-side easily.</p>
+                    <div class="bg-black/50 p-4 rounded-lg font-mono text-sm">
+                        <span class="text-yellow-400">.container</span> {<br>
+                        &nbsp;&nbsp;<span class="text-blue-300">display</span>: <span
+                            class="text-green-300">flex</span>;<br>
+                        &nbsp;&nbsp;<span class="text-blue-300">justify-content</span>: <span
+                            class="text-green-300">center</span>;<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Level -->
+            <div id="advanced" class="level-section hidden">
+                <div class="card mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-accent">Grid & Animations</h2>
+                    <p class="mb-4">CSS Grid is for 2D layouts (rows AND columns). Animations bring life.</p>
+
+                    <div class="bg-black/50 p-6 rounded-xl font-mono text-sm border border-white/10">
+                        <span class="text-yellow-400">@keyframes slide</span> {<br>
+                        &nbsp;&nbsp;<span class="text-green-300">from</span> { <span class="text-blue-300">left</span>:
+                        0; }<br>
+                        &nbsp;&nbsp;<span class="text-green-300">to</span> { <span class="text-blue-300">left</span>:
+                        100px; }<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mastery Level -->
+            <div id="mastery" class="level-section hidden">
+                <div class="card mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-accent">Variables & Preprocessors</h2>
+                    <p class="mb-4">Modern CSS is like a programming language itself.</p>
+
+                    <h3 class="text-xl font-bold mb-2">CSS Variables</h3>
+                    <div class="bg-black/50 p-4 rounded-lg font-mono text-sm">
+                        <span class="text-yellow-400">:root</span> {<br>
+                        &nbsp;&nbsp;<span class="text-blue-300">--main-color</span>: <span
+                            class="text-green-300">#ff0000</span>;<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script>
+        function showLevel(levelId, btn) {
+            // Hide all sections
+            document.querySelectorAll('.level-section').forEach(el => el.classList.add('hidden'));
+            // Show target section
+            document.getElementById(levelId).classList.remove('hidden');
+
+            // Update buttons
+            document.querySelectorAll('.level-nav button').forEach(b => {
+                b.classList.remove('active', 'btn-primary');
+                b.classList.add('btn-ghost');
+            });
+
+            // Highlight active button
+            btn.classList.remove('btn-ghost');
+            btn.classList.add('active'); // CSS handles the styling for .active
+        }
+
+        // Initialize first tab
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstBtn = document.querySelector('.level-nav button');
+            if (firstBtn) showLevel('infant', firstBtn);
+        });
+    </script>
+
+    <style>
+        /* Local overrides for this page */
+        .level-nav .active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Learn All</title>
+    <meta name="description" content="Learn about our mission to make programming education accessible to everyone">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar glass">
+        <div class="container flex items-center justify-between">
+            <a href="index.html" class="logo flex items-center gap-2">
+                <div class="logo-icon"><i class="fas fa-code"></i></div>
+                <span class="logo-text">Learn All</span>
+            </a>
+
+            <div class="search-container hidden md:block">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="global-search" placeholder="Search topics, tutorials...">
+                <div id="search-results" class="search-results glass hidden"></div>
+            </div>
+            <!-- Hero Section -->
+            <header class="hero relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent pointer-events-none"></div>
+                <div class="container text-center relative z-10 pt-20 pb-12">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">About <span
+                            class="text-gradient">Learn
+                            All</span></h1>
+                    <p class="text-xl text-sec mb-8 max-w-3xl mx-auto animate-fade-in" style="animation-delay: 0.1s">
+                        Empowering the next generation of developers through free, accessible, and comprehensive
+                        programming
+                        education.
+                    </p>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="container pb-20">
+                <!-- Mission Section -->
+                <section class="mb-16">
+                    <div class="card p-12 text-center">
+                        <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
+                        <p class="text-lg text-sec max-w-3xl mx-auto leading-relaxed">
+                            Learn All was created with a simple yet powerful mission: to make high-quality programming
+                            education
+                            accessible to everyone, regardless of their background or financial situation. We believe
+                            that
+                            coding is the superpower of the 21st century, and everyone deserves the opportunity to
+                            learn.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Features Grid -->
+                <section class="mb-16">
+                    <h2 class="text-3xl font-bold text-center mb-12">What We Offer</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="card p-8 text-center hover:border-accent transition-all">
+                            <div
+                                class="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-book-open text-3xl text-accent"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">14+ Languages</h3>
+                            <p class="text-sec">From HTML to Machine Learning, master the technologies that matter in
+                                today's
+                                job market.</p>
+                        </div>
+
+                        <div class="card p-8 text-center hover:border-accent transition-all">
+                            <div
+                                class="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-project-diagram text-3xl text-accent"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">700+ Projects</h3>
+                            <p class="text-sec">Practice your skills with real-world projects ranging from beginner to
+                                advanced
+                                levels.</p>
+                        </div>
+
+                        <div class="card p-8 text-center hover:border-accent transition-all">
+                            <div
+                                class="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-robot text-3xl text-accent"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">AI Tutor</h3>
+                            <p class="text-sec">Get instant help from our AI-powered tutor, available 24/7 to answer
+                                your coding
+                                questions.</p>
+                        </div>
+
+                        <div class="card p-8 text-center hover:border-accent transition-all">
+                            <div
+                                class="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-chart-line text-3xl text-accent"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Track Progress</h3>
+                            <p class="text-sec">Monitor your learning journey with detailed analytics, streaks, and
+                                achievement
+                                badges.</p>
+                        </div>
+
+                        <div class="card p-8 text-center hover:border-accent transition-all">
+                            <div
+                                class="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-users text-3xl text-accent"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Community</h3>
+                            <p class="text-sec">Join thousands of learners worldwide and grow together in our supportive
+                                community.</p>
+                        </div>
+
+                        <div class="card p-8 text-center hover:border-accent transition-all">
+                            <div
+                                class="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-infinity text-3xl text-accent"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Always Free</h3>
+                            <p class="text-sec">All core features are completely free forever. No hidden fees, no
+                                premium tiers,
+                                no paywalls.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Stats Section -->
+                <section class="mb-16">
+                    <div class="card p-12 bg-gradient-to-br from-accent/10 to-transparent">
+                        <h2 class="text-3xl font-bold text-center mb-12">By The Numbers</h2>
+                        <div class="grid md:grid-cols-4 gap-8 text-center">
+                            <div>
+                                <div class="text-5xl font-bold text-accent mb-2">14+</div>
+                                <div class="text-sec">Technologies</div>
+                            </div>
+                            <div>
+                                <div class="text-5xl font-bold text-accent mb-2">700+</div>
+                                <div class="text-sec">Projects</div>
+                            </div>
+                            <div>
+                                <div class="text-5xl font-bold text-accent mb-2">50+</div>
+                                <div class="text-sec">Lessons</div>
+                            </div>
+                            <div>
+                                <div class="text-5xl font-bold text-accent mb-2">100%</div>
+                                <div class="text-sec">Free</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact CTA -->
+                <section class="text-center">
+                    <div class="card p-12">
+                        <h2 class="text-3xl font-bold mb-4">Have Questions?</h2>
+                        <p class="text-lg text-sec mb-8 max-w-2xl mx-auto">
+                            We'd love to hear from you! Whether you have feedback, suggestions, or just want to say hi,
+                            don't
+                            hesitate to reach out.
+                        </p>
+                        <div class="flex gap-4 justify-center">
+                            <a href="contact.html" class="btn btn-primary">
+                                <i class="fas fa-envelope"></i> Contact Us
+                            </a>
+                            <a href="index.html" class="btn btn-outline">
+                                <i class="fas fa-code"></i> Start Learning
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <script src="script.js"></script>
+</body>
+
+</html>

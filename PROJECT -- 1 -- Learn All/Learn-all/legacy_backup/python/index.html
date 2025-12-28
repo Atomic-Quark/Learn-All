@@ -1,0 +1,197 @@
+display: none;
+animation: fadeIn 0.5s ease;
+}
+
+.level-section.active {
+display: block;
+}
+
+.level-nav {
+overflow-x: auto;
+white-space: nowrap;
+padding-bottom: 1rem;
+}
+
+.level-btn {
+padding: 0.5rem 1.5rem;
+border-radius: 2rem;
+background: var(--card-bg);
+border: 1px solid var(--card-border);
+color: var(--text-secondary);
+cursor: pointer;
+margin-right: 0.5rem;
+transition: all 0.3s;
+}
+
+.level-btn.active {
+background: var(--accent-color);
+color: white;
+border-color: var(--accent-color);
+}
+</style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <i class="fas fa-code fa-2x" style="color: var(--accent-color);"></i>
+                <span style="font-size: 1.5rem; font-weight: 700;">Learn All</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="ai-chat.html" class="nav-link">AI Help</a>
+                <div class="theme-toggle" id="theme-toggle">
+                    <div class="theme-toggle-thumb"><i class="fas fa-moon"></i></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container pt-24 pb-12">
+        <!-- Header -->
+        <div class="flex items-center gap-6 mb-12 animate-fade-in">
+            <div class="card-icon"
+                style="background: rgba(55, 118, 171, 0.1); color: #3776ab; width: 80px; height: 80px; font-size: 2.5rem;">
+                <i class="fab fa-python"></i>
+            </div>
+            <div>
+                <h1 class="text-4xl font-bold mb-2">Python Mastery</h1>
+                <p class="text-sec text-lg">The most popular language for AI, Data Science, and Web.</p>
+            </div>
+            <button onclick="markTopicComplete('python')" class="btn btn-primary ml-auto">
+                <i class="fas fa-check-circle"></i> Mark as Complete
+            </button>
+        </div>
+
+        <!-- Level Navigation -->
+        <div class="glass p-2 rounded-xl mb-8 flex overflow-x-auto gap-2 animate-fade-in delay-100">
+            <button class="btn btn-ghost flex-1 active" onclick="showLevel('infant', this)">
+                <i class="fas fa-baby"></i> Infant
+            </button>
+            <button class="btn btn-ghost flex-1" onclick="showLevel('beginner', this)">
+                <i class="fas fa-user-graduate"></i> Beginner
+            </button>
+            <button class="btn btn-ghost flex-1" onclick="showLevel('intermediate', this)">
+                <i class="fas fa-layer-group"></i> Intermediate
+            </button>
+            <button class="btn btn-ghost flex-1" onclick="showLevel('advanced', this)">
+                <i class="fas fa-code-branch"></i> Advanced
+            </button>
+            <button class="btn btn-ghost flex-1" onclick="showLevel('mastery', this)">
+                <i class="fas fa-crown"></i> Mastery
+            </button>
+        </div>
+
+        <!-- Content Sections -->
+        <div id="content-area" class="animate-fade-in delay-100">
+
+            <!-- Infant Level -->
+            <div id="infant" class="level-section">
+                <div class="card mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-accent">What is Python? (The Snake?)</h2>
+                    <p class="mb-4 text-lg">No, not the snake! 🐍 It's a language that is very easy to read.</p>
+                    <p class="mb-4 text-lg">It's like writing English instructions for the computer.</p>
+                    <ul class="list-disc pl-6 mb-6 space-y-2 text-sec">
+                        <li>It powers Instagram.</li>
+                        <li>It powers Netflix recommendations.</li>
+                        <li>It powers AI robots.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-2xl font-bold mb-4">Your First Code</h2>
+                    <p class="mb-4">See how clean it is? No curly braces <code>{}</code>!</p>
+                    <div class="bg-black/50 p-6 rounded-xl font-mono text-sm border border-white/10">
+                        <span class="text-blue-300">print</span>(<span class="text-green-300">"Hello World!"</span>)<br>
+                        <span class="text-gray-500"># That's it! Just one line.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beginner Level -->
+            <div id="beginner" class="level-section hidden">
+                <div class="card mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-accent">Variables & Loops</h2>
+                    <p class="mb-4">Storing data and repeating things.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-white/5 rounded-lg">
+                            <code class="text-accent text-lg">name = "Alice"</code>
+                            <p class="text-sm mt-2 text-sec">Variable.</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-lg">
+                            <code class="text-accent text-lg">for i in range(5):</code>
+                            <p class="text-sm mt-2 text-sec">Loop 5 times.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intermediate Level -->
+            <div id="intermediate" class="level-section hidden">
+                <div class="card mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-accent">Lists & Dictionaries</h2>
+                    <p class="mb-4">Organizing complex data.</p>
+
+                    <div class="bg-black/50 p-6 rounded-xl font-mono text-sm border border-white/10">
+                        <span class="text-gray-500"># List</span><br>
+                        fruits = [<span class="text-green-300">"apple"</span>, <span
+                            class="text-green-300">"banana"</span>]<br><br>
+                        <span class="text-gray-500"># Dictionary (Key-Value)</span><br>
+                        person = {<span class="text-green-300">"name"</span>: <span
+                            class="text-green-300">"John"</span>, <span class="text-green-300">"age"</span>: 30}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Level -->
+            <div id="advanced" class="level-section hidden">
+                <div class="card mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-accent">Functions & Modules</h2>
+                    <p class="mb-4">Reusable code blocks and importing libraries.</p>
+
+                    <div class="bg-black/50 p-6 rounded-xl font-mono text-sm border border-white/10">
+                        <span class="text-purple-400">import</span> math<br><br>
+                        <span class="text-purple-400">def</span> <span
+                            class="text-yellow-300">calculate_area</span>(radius):<br>
+                        &nbsp;&nbsp;<span class="text-purple-400">return</span> math.pi * radius ** 2
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mastery Level -->
+            <div id="mastery" class="level-section hidden">
+                <div class="card mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-accent">OOP & Decorators</h2>
+                    <p class="mb-4">Object Oriented Programming and meta-programming.</p>
+
+                    <div class="bg-black/50 p-6 rounded-xl font-mono text-sm border border-white/10">
+                        <span class="text-purple-400">class</span> <span class="text-yellow-300">Dog</span>:<br>
+                        &nbsp;&nbsp;<span class="text-purple-400">def</span> <span
+                            class="text-yellow-300">__init__</span>(self, name):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;self.name = name<br><br>
+                        &nbsp;&nbsp;<span class="text-purple-400">def</span> <span
+                            class="text-yellow-300">bark</span>(self):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-300">print</span>(<span
+                            class="text-green-300">"Woof!"</span>)
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function showLevel(levelId, element) {
+            document.querySelectorAll('.level-section').forEach(el => el.classList.add('hidden'));
+            document.getElementById(levelId).classList.remove('hidden');
+            document.querySelectorAll('.btn-ghost').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

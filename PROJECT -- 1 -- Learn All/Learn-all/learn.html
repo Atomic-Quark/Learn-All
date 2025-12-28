@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn - Learn All</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        .sidebar {
+            width: 280px;
+            height: calc(100vh - 80px);
+            position: sticky;
+            top: 80px;
+            overflow-y: auto;
+            border-right: 1px solid var(--border);
+        }
+
+        .content-area {
+            flex: 1;
+            min-height: calc(100vh - 80px);
+        }
+
+        .module-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            color: var(--text-sec);
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-bottom: 0.25rem;
+        }
+
+        .module-link:hover,
+        .module-link.active {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--accent);
+        }
+
+        .module-link.active {
+            font-weight: 600;
+            border-left: 3px solid var(--accent);
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            padding: 1.5rem;
+            border-radius: 12px;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Markdown-like content styles */
+        .lesson-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .lesson-content h2 {
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .lesson-content h3 {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .lesson-content p {
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            color: var(--text-sec);
+            font-size: 1.05rem;
+        }
+
+        .lesson-content ul,
+        .lesson-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-sec);
+        }
+
+        .lesson-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .lesson-content strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+                /* Add toggle later */
+                position: fixed;
+                z-index: 100;
+                background: var(--bg);
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+
+            .sidebar.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <nav class="navbar glass">
+        <div class="container flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <button id="sidebar-toggle" class="md:hidden text-xl"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo flex items-center gap-2">
+                    <div class="logo-icon"><i class="fas fa-book-open"></i></div>
+                    <span class="logo-text">Learn All</span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="nav-links hidden md:flex gap-4">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="ai-chat.html" class="nav-link">AI Chat</a>
+                </div>
+                <a href="profile.html"
+                    class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent hover:bg-accent/30 transition-colors">
+                    <i class="fas fa-user"></i>
+                </a>
+                <div class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container flex gap-8 pt-24 pb-12 relative">
+        <!-- Sidebar -->
+        <aside class="sidebar glass p-4" id="course-sidebar">
+            <div class="mb-6">
+                <h3 class="text-sm font-bold text-sec uppercase mb-4" id="course-title">Course Content</h3>
+                <div id="module-list">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content-area">
+            <div id="lesson-content" class="lesson-content animate-fade-in">
+                <!-- Populated by JS -->
+                <div class="text-center py-12">
+                    <h2 class="text-2xl font-bold mb-4">Select a topic to start learning</h2>
+                    <p class="text-sec">Choose a module from the sidebar.</p>
+                </div>
+            </div>
+
+            <div class="flex justify-between mt-12 pt-8 border-t border-white/10" id="lesson-nav">
+                <button id="prev-btn" class="btn btn-ghost hidden"><i class="fas fa-arrow-left"></i> Previous</button>
+                <button id="next-btn" class="btn btn-primary hidden">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

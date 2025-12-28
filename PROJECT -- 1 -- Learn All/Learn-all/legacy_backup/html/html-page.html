@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Mastery - Learn All</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .level-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .level-section.active {
+            display: block;
+        }
+
+        .level-nav {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 1rem;
+        }
+
+        .level-btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            cursor: pointer;
+            margin-right: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .level-btn.active {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-2">
+                <i class="fas fa-code fa-2x" style="color: var(--accent-color);"></i>
+                <span style="font-size: 1.5rem; font-weight: 700;">Learn All</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../ai-chat.html" class="nav-link">AI Help</a>
+                <div class="theme-toggle" id="theme-toggle">
+                    <div class="theme-toggle-thumb"><i class="fas fa-moon"></i></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 2rem;">
+        <div class="flex items-center gap-4 mb-8">
+            <img src="https://img.icons8.com/color/96/000000/html-5.png" alt="HTML" style="width: 64px;">
+            <div>
+                <h1 class="text-3xl font-bold">HTML Mastery</h1>
+                <p style="color: var(--text-secondary);">The standard markup language for documents designed to be
+                    displayed in a web browser.</p>
+            </div>
+        </div>
+
+        <!-- Level Navigation -->
+        <div class="level-nav mb-8">
+            <button class="level-btn active" onclick="showLevel('infant')">Infant</button>
+            <button class="level-btn" onclick="showLevel('beginner')">Beginner</button>
+            <button class="level-btn" onclick="showLevel('intermediate')">Intermediate</button>
+            <button class="level-btn" onclick="showLevel('advanced')">Advanced</button>
+            <button class="level-btn" onclick="showLevel('mastery')">Mastery</button>
+        </div>
+
+        <!-- Content Sections -->
+        <div id="infant" class="level-section active">
+            <div class="card mb-6">
+                <h2 class="text-2xl font-bold mb-4">What is HTML?</h2>
+                <p class="mb-4">HTML stands for Hyper Text Markup Language. It is the standard markup language for
+                    creating Web pages.</p>
+                <div class="bg-black p-4 rounded text-green-400 font-mono text-sm mb-4">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &nbsp;&nbsp;&lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;My First Heading&lt;/h1&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;My first paragraph.&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                <button class="btn btn-primary">Try it Yourself</button>
+            </div>
+        </div>
+
+        <div id="beginner" class="level-section">
+            <div class="card mb-6">
+                <h2 class="text-2xl font-bold mb-4">HTML Elements</h2>
+                <p class="mb-4">An HTML element is defined by a start tag, some content, and an end tag.</p>
+                <ul class="list-disc pl-6 mb-4">
+                    <li>&lt;h1&gt; to &lt;h6&gt; for headings</li>
+                    <li>&lt;p&gt; for paragraphs</li>
+                    <li>&lt;a&gt; for links</li>
+                    <li>&lt;img&gt; for images</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="intermediate" class="level-section">
+            <div class="card mb-6">
+                <h2 class="text-2xl font-bold mb-4">Forms and Input</h2>
+                <p class="mb-4">HTML Forms are used to collect user input. The &lt;form&gt; element is used to create an
+                    HTML form for user input.</p>
+            </div>
+        </div>
+
+        <div id="advanced" class="level-section">
+            <div class="card mb-6">
+                <h2 class="text-2xl font-bold mb-4">HTML5 Semantic Elements</h2>
+                <p class="mb-4">Semantic elements clearly describe their meaning to both the browser and the developer.
+                    Examples: &lt;article&gt;, &lt;aside&gt;, &lt;details&gt;, &lt;figcaption&gt;, &lt;figure&gt;,
+                    &lt;footer&gt;, &lt;header&gt;, &lt;main&gt;, &lt;mark&gt;, &lt;nav&gt;, &lt;section&gt;,
+                    &lt;summary&gt;, &lt;time&gt;.</p>
+            </div>
+        </div>
+
+        <div id="mastery" class="level-section">
+            <div class="card mb-6">
+                <h2 class="text-2xl font-bold mb-4">Canvas and SVG</h2>
+                <p class="mb-4">Learn how to draw graphics on the fly via scripting (usually JavaScript) using the
+                    &lt;canvas&gt; element, and how to use Scalable Vector Graphics (SVG).</p>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="../script.js"></script>
+    <script>
+        function showLevel(levelId) {
+            // Hide all sections
+            document.querySelectorAll('.level-section').forEach(el => el.classList.remove('active'));
+            // Show target section
+            document.getElementById(levelId).classList.add('active');
+
+            // Update buttons
+            document.querySelectorAll('.level-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.toLowerCase() === levelId) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

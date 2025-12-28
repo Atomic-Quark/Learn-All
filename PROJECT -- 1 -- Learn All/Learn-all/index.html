@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn All - Master Programming</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <nav class="navbar glass">
+        <div class="container flex items-center justify-between">
+            <a href="index.html" class="logo flex items-center gap-2">
+                <div class="logo-icon"><i class="fas fa-code"></i></div>
+                <span class="logo-text">Learn All</span>
+            </a>
+
+            <div class="search-container hidden md:block">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="global-search" class="search-input" placeholder="Search topics, tutorials...">
+                <div id="search-results" class="search-results glass hidden"></div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="nav-links hidden md:flex gap-4">
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div id="auth-buttons" class="flex gap-3">
+                    <a href="login.html" class="btn btn-ghost">Login</a>
+                    <a href="register.html" class="btn btn-primary">Get Started</a>
+                </div>
+                <div id="user-profile" class="hidden items-center gap-3">
+                    <div class="text-right hidden md:block">
+                        <div class="text-sm font-bold" id="nav-user-name">User</div>
+                        <div class="text-xs text-sec">Level 1</div>
+                    </div>
+                    <a href="profile.html"
+                        class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent hover:bg-accent/30 transition-colors">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <button id="logout-btn" class="text-sec hover:text-red-500"><i
+                            class="fas fa-sign-out-alt"></i></button>
+                </div>
+                <div class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent pointer-events-none"></div>
+        <div class="container text-center relative z-10 pt-20 pb-12">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">Master <span
+                    class="text-gradient">Everything</span></h1>
+            <p class="text-xl text-sec mb-8 max-w-2xl mx-auto animate-fade-in" style="animation-delay: 0.1s">
+                The ultimate free resource to learn programming, development, and computer science.
+            </p>
+            <div class="flex justify-center gap-4 animate-fade-in" style="animation-delay: 0.2s">
+                <a href="#topics" class="btn btn-primary">Start Learning</a>
+                <a href="projects.html" class="btn btn-outline">View Projects</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container pb-20" id="topics">
+        <div class="section-header flex justify-between items-end mb-8">
+            <div>
+                <h2 class="text-3xl font-bold">Learning Paths</h2>
+                <p class="text-sec">Select a technology to master</p>
+            </div>
+            <div class="flex gap-2">
+                <button class="btn btn-xs btn-active">All</button>
+                <button class="btn btn-xs">Web</button>
+                <button class="btn btn-xs">Systems</button>
+                <button class="btn btn-xs">AI</button>
+            </div>
+        </div>
+
+        <div class="grid-responsive">
+            <!-- HTML -->
+            <a href="learn.html?topic=html" class="card group hover:border-accent">
+                <div
+                    class="h-40 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                    <i class="fab fa-html5 text-6xl text-orange-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">HTML 5</h3>
+                <p class="text-sec text-sm mb-4">Master the structure of the web with semantic HTML5.</p>
+                <div class="flex justify-between items-center text-xs font-mono text-accent">
+                    <span>5 LEVELS</span>
+                    <span><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- CSS -->
+            <a href="learn.html?topic=css" class="card group hover:border-accent">
+                <div
+                    class="h-40 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                    <i class="fab fa-css3-alt text-6xl text-blue-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">CSS 3</h3>
+                <p class="text-sec text-sm mb-4">Style your pages with modern CSS, Flexbox, and Grid.</p>
+                <div class="flex justify-between items-center text-xs font-mono text-accent">
+                    <span>5 LEVELS</span>
+                    <span><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- JavaScript -->
+            <a href="learn.html?topic=javascript" class="card group hover:border-accent">
+                <div
+                    class="h-40 bg-gradient-to-br from-yellow-500/20 to-amber-500/20 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                    <i class="fab fa-js text-6xl text-yellow-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">JavaScript</h3>
+                <p class="text-sec text-sm mb-4">Add interactivity and logic to your web applications.</p>
+                <div class="flex justify-between items-center text-xs font-mono text-accent">
+                    <span>5 LEVELS</span>
+                    <span><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- Python -->
+            <a href="learn.html?topic=python" class="card group hover:border-accent">
+                <div
+                    class="h-40 bg-gradient-to-br from-blue-600/20 to-indigo-500/20 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                    <i class="fab fa-python text-6xl text-blue-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Python</h3>
+                <p class="text-sec text-sm mb-4">Versatile language for Web, Data Science, and AI.</p>
+                <div class="flex justify-between items-center text-xs font-mono text-accent">
+                    <span>5 LEVELS</span>
+                    <span><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- Java -->
+            <a href="learn.html?topic=java" class="card group hover:border-accent">
+                <div
+                    class="h-40 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                    <i class="fab fa-java text-6xl text-red-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Java</h3>
+                <p class="text-sec text-sm mb-4">Enterprise-grade applications and Android development.</p>
+                <div class="flex justify-between items-center text-xs font-mono text-accent">
+                    <span>5 LEVELS</span>
+                    <span><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- C++ -->
+            <a href="learn.html?topic=cpp" class="card group hover:border-accent">
+                <div
+                    class="h-40 bg-gradient-to-br from-blue-700/20 to-blue-900/20 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                    <i class="fas fa-code text-6xl text-blue-700"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">C++</h3>
+                <p class="text-sec text-sm mb-4">High-performance systems and game development.</p>
+                <div class="flex justify-between items-center text-xs font-mono text-accent">
+                    <span>5 LEVELS</span>
+                    <span><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- C -->
+            <a href="learn.html?topic=c" class="card group hover:border-accent">
+                <div
+                    class="h-40 bg-gradient-to-br from-gray-500/20 to-gray-700/20 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                    <span class="text-6xl font-bold text-gray-400">C</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">C Language</h3>
+                <p class="text-sec text-sm mb-4">The foundation of modern computing systems.</p>
+                <div class="flex justify-between items-center text-xs font-mono text-accent">
+                    <span>5 LEVELS</span>
+                    <span><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- C# -->
+            <a href="learn.html?topic=csharp" class="card group hover:border-accent">
+                <div
+                    class="h-40 bg-gradient-to-br from-purple-600/20 to-purple-800/20 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                    <i class="fab fa-microsoft text-6xl text-purple-600"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">C# .NET</h3>
+                <p class="text-sec text-sm mb-4">Windows applications and Unity game development.</p>
+                <div class="flex justify-between items-center text-xs font-mono text-accent">
+                    <span>5 LEVELS</span>
+                    <span><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- PHP -->
+            <a href="learn.html?topic=php" class="card group hover:border-accent">
+                <div
+                    class="h-40 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                    <i class="fab fa-php text-6xl text-indigo-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">PHP</h3>
+                <p class="text-sec text-sm mb-4">Server-side scripting and web development.</p>
+                <div class="flex justify-between items-center text-xs font-mono text-accent">
+                    <span>5 LEVELS</span>
+                    <span><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- AI -->
+            <a href="learn.html?topic=ai" class="card group hover:border-accent">
+                <div
+                    class="h-40 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                    <i class="fas fa-robot text-6xl text-cyan-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Artificial Intelligence</h3>
+                <p class="text-sec text-sm mb-4">Build intelligent systems and neural networks.</p>
+                <div class="flex justify-between items-center text-xs font-mono text-accent">
+                    <span>5 LEVELS</span>
+                    <span><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- ML -->
+            <a href="learn.html?topic=ml" class="card group hover:border-accent">
+                <div
+                    class="h-40 bg-gradient-to-br from-pink-500/20 to-rose-500/20 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                    <i class="fas fa-brain text-6xl text-pink-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Machine Learning</h3>
+                <p class="text-sec text-sm mb-4">Create predictive models and algorithms.</p>
+                <div class="flex justify-between items-center text-xs font-mono text-accent">
+                    <span>5 LEVELS</span>
+                    <span><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- Deep Learning -->
+            <a href="learn.html?topic=dl" class="card group hover:border-accent">
+                <div
+                    class="h-40 bg-gradient-to-br from-purple-500/20 to-violet-500/20 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                    <i class="fas fa-network-wired text-6xl text-purple-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Deep Learning</h3>
+                <p class="text-sec text-sm mb-4">Advanced neural networks and AI models.</p>
+                <div class="flex justify-between items-center text-xs font-mono text-accent">
+                    <span>5 LEVELS</span>
+                    <span><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- DSA -->
+            <a href="learn.html?topic=dsa" class="card group hover:border-accent">
+                <div
+                    class="h-40 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                    <i class="fas fa-project-diagram text-6xl text-green-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Data Structures</h3>
+                <p class="text-sec text-sm mb-4">Master algorithms and efficient data organization.</p>
+                <div class="flex justify-between items-center text-xs font-mono text-accent">
+                    <span>5 LEVELS</span>
+                    <span><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- DBMS -->
+            <a href="learn.html?topic=dbms" class="card group hover:border-accent">
+                <div
+                    class="h-40 bg-gradient-to-br from-orange-600/20 to-red-600/20 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                    <i class="fas fa-database text-6xl text-orange-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">DBMS</h3>
+                <p class="text-sec text-sm mb-4">Database management, SQL, and storage systems.</p>
+                <div class="flex justify-between items-center text-xs font-mono text-accent">
+                    <span>5 LEVELS</span>
+                    <span><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10 py-12 mt-20 bg-black/20">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div
+                            class="w-8 h-8 rounded bg-gradient-to-br from-accent to-accent-sec flex items-center justify-center text-white">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <span class="text-xl font-bold">Learn All</span>
+                    </div>
+                    <p class="text-sec text-sm">Empowering developers worldwide with free, high-quality programming
+                        education.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Platform</h4>
+                    <ul class="space-y-2 text-sm text-sec">
+                        <li><a href="#topics" class="hover:text-accent">Courses</a></li>
+                        <li><a href="projects.html" class="hover:text-accent">Projects</a></li>
+                        <li><a href="ai-chat.html" class="hover:text-accent">AI Tutor</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Community</h4>
+                    <ul class="space-y-2 text-sm text-sec">
+                        <li><a href="#" class="hover:text-accent">Discord</a></li>
+                        <li><a href="#" class="hover:text-accent">Twitter</a></li>
+                        <li><a href="#" class="hover:text-accent">GitHub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-sec">
+                        <li><a href="#" class="hover:text-accent">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-accent">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-sec text-sm pt-8 border-t border-white/5">
+                &copy; 2025 Learn All. Open Source Education.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
